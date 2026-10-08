@@ -53,6 +53,124 @@ section.sec {
   gap: 18px
 }
 
+.gamas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 72px) 24px
+}
+
+.gama-card {
+  min-width: 0
+}
+
+.gama-art {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #121212
+}
+
+.gama-art.producto {
+  background: #f1f1ef
+}
+
+.gama-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.2, .7, .2, 1)
+}
+
+.gama-art.producto .gama-image {
+  object-fit: contain;
+  padding: 24px
+}
+
+.gama-art:hover .gama-image {
+  transform: scale(1.035)
+}
+
+.gama-pack {
+  position: absolute;
+  right: 3%;
+  bottom: 0;
+  width: 34%;
+  height: 92%;
+  object-fit: contain;
+  mix-blend-mode: multiply
+}
+
+.gama-index {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: .14em
+}
+
+.gama-art.producto .gama-index {
+  color: var(--ink)
+}
+
+.gama-copy {
+  padding-top: 18px
+}
+
+.gama-copy p {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase
+}
+
+.gama-copy h3 {
+  margin: 7px 0 12px;
+  font-size: clamp(21px, 2.2vw, 30px)
+}
+
+.gama-copy .gama-description {
+  min-height: 3.3em;
+  margin: 0 0 14px;
+  color: var(--mut);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  text-transform: none
+}
+
+.gama-copy .lnk span {
+  margin-left: 8px;
+  color: var(--red)
+}
+
+.section-action {
+  margin-top: 36px;
+  text-align: center
+}
+
+.tone-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0
+}
+
+.tone-teaser p {
+  color: var(--mut)
+}
+
+.results-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1060px
+}
+
 .care-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));

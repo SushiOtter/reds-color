@@ -3,6 +3,10 @@
    Las rutas son relativas a index.html. */
 const IMG = {
 
+  // ---- gamas ----
+  "argan-mockup": "redscolor-imagenes/imagenes/Tubo Reds Argan Mockup.png",
+  "nature": "redscolor-imagenes/imagenes/reds-color-nature.jpg",
+
   // ---- inicio ----
   "ampolla1": "redscolor-imagenes/imagenes/inicio/ampolla1.jpg",
   "bleach1": "redscolor-imagenes/imagenes/inicio/bleach1.jpg",
@@ -18,6 +22,7 @@ const IMG = {
   "oxidante2": "redscolor-imagenes/imagenes/inicio/oxidante2.jpg",
   "pack-anticaida1": "redscolor-imagenes/imagenes/inicio/pack-anticaida1.jpg",
   "pack-anticaida2-sm": "redscolor-imagenes/imagenes/inicio/pack-anticaida2-sm.jpg",
+  "pack-anticaida2-xl": "redscolor-imagenes/imagenes/inicio/pack-anticaida2-xl.jpg",
   "REDS-COLOR": "redscolor-imagenes/imagenes/inicio/REDS-COLOR.png",
 
   // ---- coloracion ----

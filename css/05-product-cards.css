@@ -96,6 +96,13 @@
   line-height: 1.35
 }
 
+.pm-tone {
+  display: block;
+  color: var(--mut);
+  font-size: 12px;
+  margin: 6px 0
+}
+
 .pr {
   font-weight: 700
 }

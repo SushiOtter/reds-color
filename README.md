@@ -37,6 +37,12 @@ reds-color-clean/
 
 **Importante:** los CSS y scripts se cargan en el orden indicado en `index.html`. Mantén ese orden para conservar la cascada de estilos y las dependencias entre scripts.
 
+## Áreas de producto
+
+La navegación separa `Coloración` y `Tratamientos`. RED'S XIL tiene una landing propia dentro de Tratamientos; las cuatro gamas se definen en `js/datos.js` y sus imágenes se asignan en `js/imagenes.js`.
+
+Los textos de las gamas son una propuesta inicial. Antes de publicar, valida los beneficios y claims con las fichas técnicas. ARGAN y NATURE todavía no tienen productos con precio/SKU en el catálogo, por eso sus CTAs llevan a consulta de disponibilidad. La carpeta de imágenes solo incluye dos modelos; para una campaña con cuatro modelos distintos faltan dos fotos.
+
 ## Qué hace cada cosa
 
 | Quiero cambiar… | Archivo |

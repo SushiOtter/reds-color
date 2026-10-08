@@ -64,7 +64,11 @@ document.addEventListener('click', e => {
       F = g.dataset.f || 'Todos';
       cat()
     }
-    if (v == 'prod') prod(g.dataset.id);
+    if (v == 'coloracion') coloracion();
+    if (v == 'tratamientos') tratamientos();
+    if (v == 'xil') xil();
+    if (v == 'gama') gama(g.dataset.gama);
+    if (v == 'prod') prod(g.dataset.id, g.dataset.toneName, g.dataset.toneColor);
     show(v);
     if (g.dataset.to) setTimeout(() => {
       const x = $('#' + g.dataset.to);

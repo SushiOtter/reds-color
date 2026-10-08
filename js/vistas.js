@@ -14,7 +14,8 @@ function show(v) {
   el.classList.add('on');
   scrollTo(0, 0);
   cur = v;
-  $$('nav.d a').forEach(a => a.classList.toggle('on', a.dataset.go == v && (v != 'cat' || a.dataset.f == F)));
+  const activeRoute = v == 'gama' ? 'coloracion' : v == 'xil' ? 'tratamientos' : v == 'cat' ? (F == 'Tratamientos' ? 'tratamientos' : 'coloracion') : v;
+  $$('nav.d a').forEach(a => a.classList.toggle('on', a.dataset.go == activeRoute));
   gsap.fromTo(el, {
     opacity: 0,
     y: 16
@@ -35,12 +36,12 @@ function show(v) {
 }
 
 function cat() {
-  $('#ct').innerHTML = $('#cn').textContent = F == 'Todos' ? 'Toda la <b>tienda</b>' : '<b>' + F + '</b>';
-  $('#cn').textContent = F == 'Todos' ? 'Tienda' : F;
-  $('#chips').innerHTML = ['Todos', 'Coloración', 'Tratamientos', 'Oxidantes'].map(c => `<button class="chip ${c==F?'on':''}" data-chip="${c}">${c}</button>`).join('');
+  $('#ct').innerHTML = F == 'Todos' ? 'Catálogo <b>profesional</b>' : '<b>' + F + '</b>';
+  $('#cn').textContent = F == 'Todos' ? 'Catálogo' : F;
+  $('#chips').innerHTML = ['Todos', 'Coloración', 'Tratamientos'].map(c => `<button class="chip ${c==F?'on':''}" data-chip="${c}">${c}</button>`).join('');
   $('#cg').innerHTML = sk(8);
   setTimeout(() => {
-    let l = P.filter(p => F == 'Todos' || p.l == F);
+    let l = P.filter(p => F == 'Todos' || p.area == F);
     if (S == 1) l.sort((a, b) => a.p - b.p);
     if (S == 2) l.sort((a, b) => b.p - a.p);
     $('#cg').innerHTML = l.length ? l.map(card).join('') : '<p class="empty">No hay productos en esta categoría.</p>';
@@ -53,13 +54,29 @@ function cat() {
     })
   }, RM ? 0 : 650)
 }
+function coloracion() {
+  $('#color-products').innerHTML = P.filter(p => p.area == 'Coloración').map(card).join('')
+}
+function tratamientos() {
+  $('#treatment-products').innerHTML = P.filter(p => p.area == 'Tratamientos' && p.gama != 'xil').map(card).join('')
+}
+function xil() {
+  $('#xil-products').innerHTML = P.filter(p => p.gama == 'xil').map(card).join('')
+}
+function gama(id) {
+  const item = GAMAS.find(g => g.id == id);
+  if (!item) return;
+  const image = item.producto ? `<div class="gama-detail-art ${item.tipoImagen}">${im(item.imagen, item.nombre)}${im(item.producto, '')}</div>` : `<div class="gama-detail-art ${item.tipoImagen}">${im(item.imagen, item.nombre)}</div>`;
+  const products = item.productos.length ? `<div class="grid">${item.productos.map(id => card(P.find(p => p.id == id), 'view')).join('')}</div>` : `<div class="gama-unlisted"><p>Los productos de esta gama todavía no están cargados en el catálogo.</p><a class="btn" data-go="about" data-to="contacto">Consultar disponibilidad</a></div>`;
+  $('#gama-detail').innerHTML = `<div class="wrap"><div class="crumb"><a class="lnk" data-go="coloracion">Coloración</a> / ${item.nombre}</div><section class="gama-detail-hero">${image}<div><div class="eyebrow">${item.subtitulo}</div><h1>${item.nombre}</h1><p>${item.descripcion}</p></div></section><section class="sec"><div class="sh"><div><div class="eyebrow">${item.nombre}</div><h2 class="t">Descubre <b>la gama.</b></h2></div></div>${products}</section></div>`
+}
 let cp, cq = 1,
   ct, ci = 0;
 
-function prod(id) {
+function prod(id, selectedTone, selectedColor) {
   cp = P.find(p => p.id == id);
   cq = 1;
-  ct = SH[5];
+  ct = selectedTone ? [selectedTone, selectedColor] : SH[5];
   ci = 0;
   $('#pl').textContent = cp.l;
   $('#pn').textContent = $('#pn2').textContent = cp.n;
@@ -67,9 +84,9 @@ function prod(id) {
   $('#pp').innerHTML = eur(cp.p) + (cp.o ? `<s>${eur(cp.o)}</s>` : '');
   $('#sp').textContent = eur(cp.p);
   $('#qv').textContent = 1;
-  $('#sw').innerHTML = SH.map((s, i) => `<button style="background:${s[1]}" data-sw="${i}" class="${i==5?'on':''}" aria-label="${s[0]}"></button>`).join('');
+  $('#sw').innerHTML = SH.map((s, i) => `<button style="background:${s[1]}" data-sw="${i}" class="${s[1] == ct[1] ? 'on' : ''}" aria-label="${s[0]}"></button>`).join('');
   $('#tn2').textContent = ct[0];
-  $('#tb').style.display = cp.l == 'Coloración' ? '' : 'none';
+  $('#tb').style.display = cp.area == 'Coloración' && cp.gama ? '' : 'none';
   $('#th').innerHTML = cp.im.map((k, i) => `<button data-th="${i}" class="${i?'':'on'}">${im(k)}</button>`).join('');
   pcol();
   $('#rel').innerHTML = P.filter(p => p.id != id).slice(0, 4).map(card).join('')
