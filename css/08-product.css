@@ -1,0 +1,190 @@
+/* ============================================================
+   12. FICHA DE PRODUCTO (galería, tonos, compra)
+   ============================================================ */
+.pd {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(24px, 5vw, 72px);
+  padding: 10px 0 60px
+}
+
+.gal {
+  align-items: start;
+  align-self: start;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 14px
+}
+
+.th {
+  display: grid;
+  gap: 10px;
+  align-content: start
+}
+
+.th button {
+  aspect-ratio: 1;
+  background: var(--bg2);
+  border: 2px solid transparent;
+  overflow: hidden
+}
+
+.th button:hover {
+  border-color: var(--mut)
+}
+
+.th button.on {
+  border-color: var(--red)
+}
+
+.th img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.big {
+  align-self: start;
+  background: var(--bg2);
+  display: grid;
+  place-items: center;
+  overflow: hidden
+}
+
+.big img {
+  width: 100%;
+  height: auto;
+  max-height: min(85vh, 880px);
+  object-fit: contain
+}
+
+.info h1 {
+  font-size: clamp(28px, 3.4vw, 44px);
+  margin: 10px 0 12px
+}
+
+.info .pr {
+  font-size: 26px;
+  margin: 16px 0
+}
+
+.sw {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 22px
+}
+
+.sw button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--line);
+  transition: .2s
+}
+
+.sw button:hover {
+  transform: scale(1.12)
+}
+
+.sw button.on {
+  box-shadow: 0 0 0 2px var(--red)
+}
+
+.buy {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0 18px
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line)
+}
+
+.qty button {
+  width: 44px;
+  height: 52px
+}
+
+.qty button:hover {
+  background: var(--bg2)
+}
+
+.qty span {
+  width: 30px;
+  text-align: center
+}
+
+.buy .btn {
+  flex: 1
+}
+
+.stk {
+  color: #1f7a45;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: center
+}
+
+.stk::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1f7a45
+}
+
+.pay {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0
+}
+
+.pay span {
+  border: 1px solid var(--line);
+  font-size: 11px;
+  padding: 5px 10px;
+  letter-spacing: .06em
+}
+
+details {
+  border-top: 1px solid var(--line);
+  padding: 16px 0
+}
+
+details:last-of-type {
+  border-bottom: 1px solid var(--line)
+}
+
+summary {
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between
+}
+
+summary::after {
+  content: "+";
+  font-size: 20px;
+  line-height: 1;
+  color: var(--red)
+}
+
+details[open] summary::after {
+  content: "–"
+}
+
+details p {
+  color: var(--mut);
+  margin-top: 10px
+}
+
+.stick {
+  display: none
+}
+

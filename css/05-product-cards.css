@@ -1,0 +1,126 @@
+/* ============================================================
+   9. PRODUCTOS (rejilla, tarjetas, skeleton de carga)
+   ============================================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 20px
+}
+
+.pc {
+  display: flex;
+  flex-direction: column
+}
+
+.pi {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--bg2);
+  overflow: hidden
+}
+
+.pi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.2, .7, .2, 1)
+}
+
+.pc:hover .pi img {
+  transform: scale(1.05)
+}
+
+.bd {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #0a0a0a;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  font-weight: 600;
+  z-index: 2
+}
+
+.bd.r {
+  background: var(--red)
+}
+
+.qa {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px;
+  transform: translateY(101%);
+  transition: transform .35s;
+  z-index: 2
+}
+
+.pc:hover .qa {
+  transform: none
+}
+
+.qa .btn {
+  width: 100%;
+  padding: 13px
+}
+
+@media(hover:none) {
+  .qa {
+    transform: none;
+    position: static;
+    padding: 10px 0 0
+  }
+}
+
+.pm {
+  padding-top: 14px
+}
+
+.pm small {
+  color: var(--mut);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 500
+}
+
+.pm h3 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 4px 0 6px;
+  line-height: 1.35
+}
+
+.pr {
+  font-weight: 700
+}
+
+.pr s {
+  color: var(--mut);
+  font-weight: 400;
+  margin-left: 8px
+}
+
+.st {
+  color: var(--red);
+  font-size: 12px;
+  letter-spacing: 2px
+}
+
+.sk {
+  background: linear-gradient(100deg, var(--bg2) 30%, var(--line) 50%, var(--bg2) 70%);
+  background-size: 200% 100%;
+  animation: sh 1.2s infinite
+}
+
+@keyframes sh {
+  to {
+    background-position: -200% 0
+  }
+}
+

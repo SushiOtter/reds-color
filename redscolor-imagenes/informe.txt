@@ -1,0 +1,28 @@
+﻿RED'S COLOR - EXTRACCIÃ“N DE IMÃGENES
+=====================================
+
+Fecha: 10/07/2026 13:25:47
+
+Web:
+https://redscolor.com
+
+PÃ¡ginas analizadas:
+/
+/coloracion/
+/tratamientos/
+/sobre-nosotros/
+
+Total de URLs de imÃ¡genes Ãºnicas:
+57
+
+Carpeta de imÃ¡genes:
+C:\Users\Hp\Downloads\redscolor\redscolor-imagenes\imagenes
+
+Listado completo:
+C:\Users\Hp\Downloads\redscolor\redscolor-imagenes\urls-encontradas.txt
+
+NOTA:
+Las URLs de WordPress que contenÃ­an tamaÃ±os generados
+automÃ¡ticamente (-300x200, -768x512, etc.) se han intentado
+convertir a su archivo original.
+

@@ -1,0 +1,171 @@
+/* ============================================================
+   16. VISTAS (mostrar y ocultar páginas)
+   ============================================================ */
+.v {
+  display: none
+}
+
+.v.on {
+  display: block
+}
+
+/* ============================================================
+   17. RESPONSIVE (tablet y móvil)
+   ============================================================ */
+@media(max-width:1280px) {
+
+  nav.d,
+  .sbx {
+    display: none
+  }
+
+  .bur,
+  .sbt {
+    display: grid
+  }
+
+  .sopen .sbx {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #0a0a0a;
+    padding: 12px clamp(18px, 4vw, 48px);
+    border-bottom: 1px solid #222
+  }
+
+  .sopen .sbx .sb {
+    width: 100%
+  }
+
+  .sopen #sr {
+    position: static;
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+    margin-top: 10px;
+    max-height: 60vh
+  }
+}
+
+@media(max-width:900px) {
+
+  .hero .wrap,
+  .pd,
+  .pro,
+  .tn,
+  .tec,
+  .ab,
+  .ct-g,
+  .ct-f,
+  .vals,
+  .cats,
+  .res {
+    grid-template-columns: 1fr
+  }
+
+  .hv {
+    display: none
+  }
+
+  .hero {
+    min-height: 80vh
+  }
+
+  .hero::after {
+    background: rgba(0, 0, 0, .6)
+  }
+
+  .trust,
+  .stats {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .trust div:nth-child(2),
+  .stats div:nth-child(2) {
+    border-right: 0
+  }
+
+  .trust div:nth-child(-n+2),
+  .stats div:nth-child(-n+2) {
+    border-bottom: 1px solid #222
+  }
+
+  .cat {
+    aspect-ratio: 16/11
+  }
+
+  .lines {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 12px
+  }
+
+  .gal {
+    grid-template-columns: 1fr
+  }
+
+  .th {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 70px);
+    order: 2
+  }
+
+  footer .fg {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .stick {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 12px;
+    align-items: center;
+    transform: translateY(110%)
+  }
+
+  .stick .btn {
+    flex: 1
+  }
+
+  .sh {
+    flex-direction: column;
+    align-items: start
+  }
+
+  #toast {
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px))
+  }
+
+  .feats {
+    grid-template-columns: 1fr
+  }
+
+  .pro figure {
+    min-height: 300px
+  }
+
+  .tp {
+    aspect-ratio: 4/3
+  }
+}
+
+/* ============================================================
+   18. ACCESIBILIDAD (reducir movimiento)
+   ============================================================ */
+@media(prefers-reduced-motion:reduce) {
+  * {
+    animation: none !important;
+    transition: none !important
+  }
+}

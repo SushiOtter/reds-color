@@ -1,0 +1,145 @@
+/* ============================================================
+   13. CARRITO, MENÚ MÓVIL Y AVISO (toast)
+   ============================================================ */
+.ov {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 90;
+  display: none
+}
+
+.dr,
+.mm {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: var(--bg);
+  z-index: 91;
+  display: none;
+  flex-direction: column;
+  padding: 24px;
+  padding-top: calc(24px + env(safe-area-inset-top, 0px))
+}
+
+.dr {
+  right: 0;
+  width: min(430px, 100%)
+}
+
+.mm {
+  left: 0;
+  width: min(340px, 86%);
+  background: #0a0a0a;
+  color: #fff
+}
+
+.mm a {
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 14px 0;
+  border-bottom: 1px solid #222
+}
+
+.dr .li {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden
+}
+
+.dr .th2 {
+  background: var(--bg2);
+  aspect-ratio: 1;
+  overflow: hidden
+}
+
+.dr .th2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.mq {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  margin-top: 8px
+}
+
+.mq button {
+  width: 34px;
+  height: 34px
+}
+
+.mq button:disabled {
+  opacity: .35
+}
+
+.mq button:not(:disabled):hover {
+  background: var(--bg2)
+}
+
+.mq span {
+  min-width: 26px;
+  text-align: center;
+  font-size: 13px
+}
+
+.rm {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--mut);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-height: 24px
+}
+
+.rm:hover {
+  color: var(--red)
+}
+
+.fp {
+  height: 4px;
+  background: var(--line);
+  margin: 10px 0 4px
+}
+
+.fp i {
+  display: block;
+  height: 100%;
+  background: var(--red);
+  width: 0
+}
+
+.empty {
+  text-align: center;
+  color: var(--mut);
+  margin: auto
+}
+
+#toast {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  background: #0a0a0a;
+  color: #fff;
+  border-left: 4px solid var(--red);
+  padding: 14px 22px;
+  opacity: 0;
+  z-index: 120;
+  font-size: 14px;
+  pointer-events: none;
+  display: flex;
+  gap: 10px
+}
+
