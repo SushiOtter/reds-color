@@ -3,7 +3,7 @@
 let cart = [],
   dOpen = 0,
   mOpen = 0;
-const FREE = 60,
+const FREE = 89,
   lock = b => document.body.style.overflow = b ? 'hidden' : '';
 
 function renderCart() {

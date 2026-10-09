@@ -6,6 +6,12 @@ const IMG = {
   // ---- gamas ----
   "argan-mockup": "redscolor-imagenes/imagenes/Tubo Reds Argan Mockup.png",
   "nature": "redscolor-imagenes/imagenes/reds-color-nature.jpg",
+  "xil-shampoo-300": "redscolor-imagenes/imagenes/tratamientos/reds-xil-champu-caida-300.jpg",
+  "xil-shampoo-1000": "redscolor-imagenes/imagenes/tratamientos/reds-xil-champu-caida-1000.jpg",
+  "xil-nutriente-300": "redscolor-imagenes/imagenes/tratamientos/reds-xil-champu-nutriente-300.jpg",
+  "xil-ampollas-fase1": "redscolor-imagenes/imagenes/tratamientos/reds-xil-ampollas-fase1.jpg",
+  "xil-shock-fase1": "redscolor-imagenes/imagenes/tratamientos/reds-xil-shock-fase1.jpg",
+  "xil-fti-fase2": "redscolor-imagenes/imagenes/tratamientos/reds-xil-fti-fase2.jpg",
 
   // ---- inicio ----
   "ampolla1": "redscolor-imagenes/imagenes/inicio/ampolla1.jpg",

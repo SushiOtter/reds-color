@@ -7,8 +7,8 @@ const P = [{
     area: "Coloración",
     gama: "color",
     tono: "6.0 · Rubio oscuro natural",
-    p: 6.9,
-    b: "Nuevo",
+    p: 10.95,
+    url: "https://negredopro.com/tinte-reds-color-caviar-100ml-6",
     im: ["caviar2", "caviar1", "caviar2-sm"],
     d: "Coloración con colorantes de última generación desarrollados por laboratorios americanos."
   },
@@ -18,9 +18,9 @@ const P = [{
     l: "Coloración",
     area: "Coloración",
     gama: "keratin",
-    p: 5.5,
-    o: 6.5,
-    b: "−15%",
+    tono: "6.0",
+    p: 12.5,
+    url: "https://negredopro.com/tinte-con-queratina-reds-keratin-60-60ml",
     im: ["keratin2", "keratin1", "keratin2-sm"],
     d: "Coloración permanente con proteínas de keratina y aceite de algodón."
   },
@@ -29,7 +29,8 @@ const P = [{
     n: "Decoloración RED'S COLOR 500 g",
     l: "Oxidantes",
     area: "Coloración",
-    p: 14.9,
+    p: 36.9,
+    url: "https://negredopro.com/decoloracion-reds-color-500g",
     im: ["bleach4", "bleach3", "bleach1"],
     d: "Decolorante de nueva tecnología, inodoro y con bajo contenido amoniacal."
   },
@@ -39,9 +40,8 @@ const P = [{
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 29.9,
-    o: 35.2,
-    b: "Pack −15%",
+    p: 34.5,
+    url: "https://negredopro.com/pack-anticaida-reds-xil",
     im: ["pack-anticaida2-sm", "pack-anticaida1", "pack-anticaida3-xl"],
     d: "Tratamiento caída 2ª fase + shampoo caída."
   },
@@ -51,9 +51,9 @@ const P = [{
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 19.5,
-    b: "Top ventas",
-    im: ["ampolla1", "ampolla-fase1-sm", "ampolla-fase2"],
+    p: 34.5,
+    url: "https://negredopro.com/ampollas-anticaida-1-fase-reds-xil",
+    im: ["xil-ampollas-fase1", "ampolla-fase1-sm", "ampolla-fase2"],
     d: "Tratamiento preventivo y de mantenimiento para todos los tipos de caída."
   },
   {
@@ -61,67 +61,85 @@ const P = [{
     n: "Oxidante en crema RED'S COLOR 20 vol 1000 ml",
     l: "Oxidantes",
     area: "Coloración",
-    p: 7.9,
+    p: 9.95,
+    url: "https://negredopro.com/oxidante-en-crema-reds-color-20-vol-1000ml",
     im: ["oxidante1000", "oxidante20", "oxidante20-1-sm"],
     d: "Base cosmética con emolientes y polímero filmógeno que protegen el cabello y el cuero cabelludo."
   },
   {
     id: 7,
-    n: "Shampoo anticaspa RED'S",
+    n: "Champú nutriente anticaspa RED'S XIL 300 ml",
     l: "Tratamientos",
     area: "Tratamientos",
-    p: 11.5,
-    im: ["caspa", "caspa1", "caspa2"],
-    d: "Combate la irritación y controla la aparición de escamas."
+    gama: "xil",
+    p: 9.9,
+    url: "https://negredopro.com/champu-nutriente-reds-xil-300ml",
+    im: ["xil-nutriente-300", "caspa", "caspa1"],
+    d: "Champú de uso frecuente para caspa seca y grasa. Regula el cuero cabelludo, calma el picor y nutre con extracto de caviar."
   },
   {
     id: 8,
-    n: "Shampoo anticaída RED'S",
+    n: "Champú anticaída RED'S XIL 300 ml",
     l: "Tratamientos",
     area: "Tratamientos",
-    p: 11.5,
-    o: 13.5,
-    b: "−15%",
-    im: ["nutriente300", "nutriente1000", "composicion-shampoos-xl"],
-    d: "Fortalece el cabello desde la raíz."
+    gama: "xil",
+    p: 9.9,
+    url: "https://negredopro.com/champu-anticaida-reds-xil-300ml",
+    im: ["xil-shampoo-300"],
+    d: "Champú con extracto de caviar y aceites esenciales para cabello débil."
   },
   {
     id: 9,
-    n: "Oxidante en crema RED'S COLOR 10 vol",
+    n: "Oxidante en crema RED'S COLOR 10 vol 150 ml",
     l: "Oxidantes",
     area: "Coloración",
-    p: 7.5,
+    p: 3.99,
+    url: "https://negredopro.com/oxidante-en-crema-reds-color-10-vol-150ml",
     im: ["oxidante10", "oxidante10-1-sm"],
     d: "Oxidante en crema de uso profesional."
   },
   {
     id: 10,
-    n: "Oxidante en crema RED'S COLOR 40 vol",
+    n: "Oxidante en crema RED'S COLOR 40 vol 150 ml",
     l: "Oxidantes",
     area: "Coloración",
-    p: 7.9,
+    p: 3.99,
+    url: "https://negredopro.com/oxidante-en-crema-reds-color-40-vol-150ml",
     im: ["oxidante40", "oxidante40-1-sm"],
     d: "Oxidante en crema de uso profesional."
   },
   {
     id: 11,
-    n: "Tratamiento caída 1ª fase RED'S XIL",
+    n: "RED'S XIL Shock Fase 1 60 ml",
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 17.9,
-    im: ["gotero-fase1", "gotero-fase1-sm", "gotero1"],
-    d: "Tratamiento en gotero para la primera fase."
+    p: 34.5,
+    url: "https://negredopro.com/tratamiento-estimulador-capilar-1-fase-shock-reds-xil-60ml",
+    im: ["xil-shock-fase1", "gotero-fase1-sm", "gotero1"],
+    d: "Tratamiento preventivo y de mantenimiento para todo tipo de caída."
   },
   {
     id: 12,
-    n: "Tratamiento caída 2ª fase RED'S XIL",
+    n: "RED'S XIL FTI Fase 2 60 ml",
+    l: "Tratamientos",
+    area: "Tratamientos",
+    gama: "xil",
+    p: 34.5,
+    url: "https://negredopro.com/tratamiento-estimulador-capilar-2-fase-fti-reds-xil-60ml",
+    im: ["xil-fti-fase2", "gotero-fase2-sm", "ampolla-fase2-sm"],
+    d: "Tratamiento estimulador capilar para la segunda fase."
+  },
+  {
+    id: 13,
+    n: "Champú anticaída RED'S XIL 1000 ml",
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
     p: 19.9,
-    im: ["gotero-fase2-sm", "ampolla-fase2-sm"],
-    d: "Tratamiento en gotero para la segunda fase."
+    url: "https://negredopro.com/champu-anticaida-reds-xil-1000ml",
+    im: ["xil-shampoo-1000"],
+    d: "Champú profesional con extracto de caviar y aceites esenciales para la rutina anticaída."
   }
 ];
 const GAMAS = [
@@ -164,19 +182,9 @@ const GAMAS = [
     productos: []
   }
 ];
-const SH = [
-  ["Negro 1.0", "#161616"],
-  ["Castaño 4.0", "#44301f"],
-  ["Rubio 7.0", "#a07a4c"],
-  ["Rubio claro 9.0", "#d8bd8c"],
-  ["Cobrizo 7.4", "#a8532a"],
-  ["Rojo 6.66", "#9c1428"],
-  ["Chocolate 5.7", "#5a3a2a"],
-  ["Ceniza 8.1", "#a79c92"]
-];
 const FAM = {
   Naturales: [
-    ["4.0", "#44301f"], ["5.0", "#5b3d28"], ["6.0", "#7b5a3a"], ["7.0", "#a07a4c"], ["8.0", "#c09c66"]
+    ["6.0", "#7b5a3a"], ["7.0", "#a07a4c"], ["8.0", "#c09c66"], ["9.0", "#d8bd8c"]
   ],
   Cenizas: [
     ["6.1", "#8c847d"], ["7.1", "#a79f98"], ["8.1", "#c5bdb5"], ["9.1", "#d8d1ca"]
@@ -194,6 +202,51 @@ const FAM = {
     ["7.66", "#c01a2c"]
   ],
   Violetas: [
-    ["5.2", "#6a3b56"], ["6.2", "#83527d"], ["7.2", "#9f73a1"]
+    ["4.67", "#60435f"], ["5.67", "#79566f"], ["6.66", "#9c1428"]
+  ],
+  Mixtos: [
+    ["6.34", "#b8784c"], ["7.34", "#ca965e"], ["8.34", "#dfb779"]
   ]
 };
+const TONE_URLS = {
+  color: {
+    "6.0": "https://negredopro.com/tinte-reds-color-caviar-100ml-6",
+    "7.0": "https://negredopro.com/tinte-reds-color-caviar-100ml-7",
+    "8.0": "https://negredopro.com/tinte-reds-color-caviar-100ml-8",
+    "9.0": "https://negredopro.com/tinte-reds-color-caviar-100ml-9",
+    "6.1": "https://negredopro.com/tinte-reds-color-caviar-100ml-61",
+    "7.1": "https://negredopro.com/tinte-reds-color-caviar-100ml-71",
+    "8.1": "https://negredopro.com/tinte-reds-color-caviar-100ml-81",
+    "9.1": "https://negredopro.com/tinte-reds-color-caviar-100ml-91",
+    "6.3": "https://negredopro.com/tinte-reds-color-caviar-100ml-63",
+    "7.3": "https://negredopro.com/tinte-reds-color-caviar-100ml-73",
+    "8.3": "https://negredopro.com/tinte-reds-color-caviar-100ml-83",
+    "9.3": "https://negredopro.com/tinte-reds-color-caviar-100ml-93",
+    "6.4": "https://negredopro.com/tinte-reds-color-caviar-100ml-64",
+    "7.4": "https://negredopro.com/tinte-reds-color-caviar-100ml-74",
+    "6.66": "https://negredopro.com/tinte-reds-color-caviar-100ml-666",
+    "7.66": "https://negredopro.com/tinte-reds-color-caviar-100ml-766"
+  },
+  keratin: {
+    "6.0": "https://negredopro.com/tinte-con-queratina-reds-keratin-60-60ml",
+    "7.0": "https://negredopro.com/tinte-con-queratina-reds-keratin-70-60ml",
+    "8.0": "https://negredopro.com/tinte-con-queratina-reds-keratin-80-60ml",
+    "9.0": "https://negredopro.com/tinte-con-queratina-reds-keratin-90-60ml",
+    "6.1": "https://negredopro.com/tinte-con-queratina-reds-keratin-61-60ml",
+    "7.1": "https://negredopro.com/tinte-con-queratina-reds-keratin-71-60ml",
+    "8.1": "https://negredopro.com/tinte-con-queratina-reds-keratin-81-60ml",
+    "6.3": "https://negredopro.com/tinte-con-queratina-reds-keratin-63-60ml",
+    "7.3": "https://negredopro.com/tinte-con-queratina-reds-keratin-73-60ml",
+    "8.3": "https://negredopro.com/tinte-con-queratina-reds-keratin-83-60ml",
+    "9.3": "https://negredopro.com/tinte-con-queratina-reds-keratin-93-60ml",
+    "6.4": "https://negredopro.com/tinte-con-queratina-reds-keratin-64-60ml",
+    "7.4": "https://negredopro.com/tinte-con-queratina-reds-keratin-74-60ml",
+    "6.34": "https://negredopro.com/tinte-con-queratina-reds-keratin-634-60ml",
+    "7.34": "https://negredopro.com/tinte-con-queratina-reds-keratin-734-60ml",
+    "8.34": "https://negredopro.com/tinte-con-queratina-reds-keratin-834-60ml",
+    "6.66": "https://negredopro.com/tinte-con-queratina-reds-keratin-666-60ml",
+    "4.67": "https://negredopro.com/tinte-con-queratina-reds-keratin-467-60ml",
+    "5.67": "https://negredopro.com/tinte-con-queratina-reds-keratin-567-60ml"
+  }
+};
+let SH = [];

@@ -14,7 +14,7 @@ reds-color-clean/
 │   ├── 04-home.css          Secciones de inicio y selector de tonos
 │   ├── 05-product-cards.css Tarjetas y rejillas de productos
 │   ├── 06-company.css       Bloques de marca, resultados y sobre nosotros
-│   ├── 07-category.css      Listado y filtros de categorías
+│   ├── 07-category.css      Cabeceras de área (Coloración/Tratamientos) y RED'S XIL
 │   ├── 08-product.css       Ficha de producto
 │   ├── 09-cart.css          Carrito, menú móvil y avisos
 │   ├── 10-footer-contact.css Footer y formulario de contacto
@@ -25,7 +25,7 @@ reds-color-clean/
 │   ├── datos.js            Productos, tonos y familias de color
 │   ├── componentes.js      Tarjeta de producto, destacados y selector de tono
 │   ├── carrito.js          Cesta, aviso (toast), cajón del carrito y menú móvil
-│   ├── vistas.js           Cambio de página, categoría, ficha de producto
+│   ├── vistas.js           Cambio de página, gama, ficha de producto
 │   ├── eventos.js          Clics globales y botones de la ficha y del carrito
 │   ├── busqueda.js         Buscador con sugerencias en vivo
 │   ├── contacto.js         Formulario de contacto y su validación
@@ -39,9 +39,11 @@ reds-color-clean/
 
 ## Áreas de producto
 
-La navegación separa `Coloración` y `Tratamientos`. RED'S XIL tiene una landing propia dentro de Tratamientos; las cuatro gamas se definen en `js/datos.js` y sus imágenes se asignan en `js/imagenes.js`.
+La navegación tiene solo dos grandes áreas: `Coloración` y `Tratamientos` (más `Sobre nosotros`). No hay página de catálogo/tienda: cada área muestra sus propios productos. RED'S XIL tiene una landing propia dentro de Tratamientos; las cuatro gamas se definen en `js/datos.js` y sus imágenes se asignan en `js/imagenes.js`.
 
-Los textos de las gamas son una propuesta inicial. Antes de publicar, valida los beneficios y claims con las fichas técnicas. ARGAN y NATURE todavía no tienen productos con precio/SKU en el catálogo, por eso sus CTAs llevan a consulta de disponibilidad. La carpeta de imágenes solo incluye dos modelos; para una campaña con cuatro modelos distintos faltan dos fotos.
+La sección editorial de las cuatro gamas ("Elige tu gama · Cuatro formas de llevar el color") se genera con la función `gamaCard` de `js/componentes.js` y se pinta dos veces: en la home (`#home-gamas`) y en Coloración (`#color-gamas`).
+
+Los textos de las gamas son una propuesta inicial. Antes de publicar, valida los beneficios y claims con las fichas técnicas. ARGAN y NATURE todavía no tienen productos con precio/SKU, por eso sus CTAs llevan a consulta de disponibilidad. Importante: la carpeta de imágenes solo incluye dos fotos de modelo (`chica-rizada` y `chica-lisa`); ARGAN y NATURE usan foto de producto. Para una campaña con cuatro modelos distintos faltan dos fotos: añádelas, súbelas a la carpeta y actualiza sus claves en `js/imagenes.js`.
 
 ## Qué hace cada cosa
 
@@ -51,7 +53,7 @@ Los textos de las gamas son una propuesta inicial. Antes de publicar, valida los
 | Colores de marca y estilos base | `css/01-foundation.css` |
 | Cabecera y navegación | `css/02-header.css` |
 | Hero y secciones de la portada | `css/03-hero.css` y `css/04-home.css` |
-| Tarjetas, categorías y ficha de producto | `css/05-product-cards.css` a `css/08-product.css` |
+| Tarjetas y ficha de producto | `css/05-product-cards.css` a `css/08-product.css` |
 | Sobre nosotros, carrito, footer y contacto | `css/06-company.css` y `css/09-cart.css` a `css/10-footer-contact.css` |
 | Adaptación a tablet, móvil y accesibilidad | `css/11-responsive.css` |
 | Nombres, precios, descripciones, fotos de productos | `js/datos.js` (lista `P`) |

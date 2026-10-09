@@ -33,17 +33,12 @@ document.addEventListener('click', e => {
     tone(f, +i);
     return
   }
-  const c = e.target.closest('[data-chip]');
-  if (c) {
-    F = c.dataset.chip;
-    cat();
-    return
-  }
   const s = e.target.closest('[data-sw]');
   if (s) {
     ct = SH[s.dataset.sw];
     $$('#sw button').forEach(b => b.classList.toggle('on', b == s));
     $('#tn2').textContent = ct[0];
+    $('#official-buy').href = TONE_URLS[cp.gama]?.[ct[0]] || cp.url || '#';
     return
   }
   const t = e.target.closest('[data-th]');
@@ -60,15 +55,11 @@ document.addEventListener('click', e => {
     closeSearch();
     $('#q').value = '';
     const v = g.dataset.go;
-    if (v == 'cat') {
-      F = g.dataset.f || 'Todos';
-      cat()
-    }
     if (v == 'coloracion') coloracion();
     if (v == 'tratamientos') tratamientos();
     if (v == 'xil') xil();
     if (v == 'gama') gama(g.dataset.gama);
-    if (v == 'prod') prod(g.dataset.id, g.dataset.toneName, g.dataset.toneColor);
+    if (v == 'prod') prod(g.dataset.id, g.dataset.toneName, g.dataset.toneColor, g.dataset.toneUrl);
     show(v);
     if (g.dataset.to) setTimeout(() => {
       const x = $('#' + g.dataset.to);
@@ -78,14 +69,10 @@ document.addEventListener('click', e => {
     }, 120)
   }
 });
-$('#so').onchange = e => {
-  S = +e.target.value;
-  cat()
-};
 $('#qm').onclick = () => $('#qv').textContent = cq = Math.max(1, cq - 1);
 $('#qp').onclick = () => $('#qv').textContent = ++cq;
 const addP = () => {
-  add(cp.id, cq, cp.l == 'Coloración' ? ct[0] : undefined);
+  add(cp.id, cq, cp.gama ? ct[0] : undefined);
   setTimeout(() => drawer(true), 500)
 };
 $('#add').onclick = $('#add2').onclick = addP;

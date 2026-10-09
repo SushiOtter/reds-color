@@ -22,7 +22,7 @@
 
 <body>
   <!-- BARRA SUPERIOR (aviso de envío) -->
-  <div class="ann">Envío gratis desde 60 € · Fórmulas profesionales · Asesoramiento experto</div>
+  <div class="ann">Envío gratis desde 89 € · Productos profesionales · Asesoramiento</div>
   <!-- CABECERA: logo, menú, buscador, cuenta y carrito -->
   <header id="hd">
     <div class="wrap hd">
@@ -41,17 +41,17 @@
             </svg><span class="sbw"><input id="q" autocomplete="off" placeholder=" " aria-label="Buscar"><span class="ph" id="ph">Buscar tintes, tratamientos, shampoos, ampollas, oxidantes, decoloración…</span></span></label>
           <div id="sr" role="listbox"></div>
         </div>
-        <button class="ib" aria-label="Mi cuenta" title="Mi cuenta"><svg viewBox="0 0 24 24">
+        <a class="ib" href="https://negredopro.com/iniciar-sesion" target="_blank" rel="noopener" aria-label="Mi cuenta, abre la tienda profesional en una pestaña nueva" title="Mi cuenta"><svg viewBox="0 0 24 24">
             <circle cx="12" cy="8" r="4" />
             <path d="M4 21c1-4 4-6 8-6s7 2 8 6" />
-          </svg></button>
+          </svg></a>
         <button class="ib" id="cb" aria-label="Cesta" title="Cesta"><svg viewBox="0 0 24 24">
             <path d="M5 8h14l-1 12H6zM9 8a3 3 0 0 1 6 0" />
           </svg><span id="cc">0</span></button>
       </div>
     </div>
   </header>
-  <!-- CONTENIDO PRINCIPAL: cada bloque .v es una "página" (home, categoría, sobre nosotros, producto) -->
+  <!-- CONTENIDO PRINCIPAL: cada bloque .v es una "página" (home, coloración, tratamientos, gama, producto, sobre nosotros) -->
   <main>
     <!-- PÁGINA: INICIO -->
     <div class="v on" id="v-home">
@@ -68,10 +68,10 @@
       </section>
       <!-- 2. BENEFICIOS -->
       <div class="trust">
-        <div><b>Envío 24-48 h</b>Gratis desde 60 €</div>
+        <div><b>Preparación</b>1-2 días hábiles</div>
+        <div><b>Envío gratis</b>Desde 89 €</div>
         <div><b>Fórmulas pro</b>Uso en peluquería</div>
-        <div><b>Pago seguro</b>Tarjeta · Bizum · PayPal</div>
-        <div><b>Asesoramiento</b>Atención experta</div>
+        <div><b>Devolución</b>14 días · producto sin abrir</div>
       </div>
       <!-- 3. CUATRO GAMAS -->
       <section class="sec">
@@ -80,6 +80,7 @@
             <div>
               <div class="eyebrow">Elige tu gama</div>
               <h2 class="t">Cuatro gamas. <b>Una identidad.</b></h2>
+              <p class="sec-lead">Cuatro formas de llevar el color. Cada gama tiene su propia personalidad y su propio resultado.</p>
             </div>
           </div>
           <div class="gamas-grid" id="home-gamas" data-r></div>
@@ -118,7 +119,6 @@
         <div class="wrap">
           <div class="sh" data-r>
             <div><div class="eyebrow">Productos destacados</div><h2 class="t">Los favoritos de <b>los profesionales.</b></h2></div>
-            <a class="lnk" data-go="cat" data-f="Todos">Ver catálogo</a>
           </div>
           <div class="grid" id="feat"></div>
         </div>
@@ -129,7 +129,7 @@
           <figure><img data-img="bleach3" alt="Decoloración RED'S COLOR"></figure>
           <div>
             <div class="eyebrow">Tecnología y profesionalidad</div>
-            <h2 class="t">¿Qué diferencia a <b>RED'S COLOR</b>?</h2>
+            <h2 class="t">¿Qué hace diferente a <b>RED'S COLOR</b>?</h2>
             <div class="feats">
               <div class="ft"><span class="dsp">01</span>
                 <h3>Pigmentación</h3>
@@ -157,7 +157,7 @@
           <div class="eyebrow">Recursos profesionales</div>
           <h2 class="t" style="color:#fff">Tu color. Tu técnica. <b style="color:#0a0a0a">Tu resultado.</b></h2>
           <p>Consulta la carta de color o solicita asesoramiento sobre gamas, tonos y tratamientos para tu salón.</p>
-          <a class="btn" data-go="coloracion" data-to="color-tonos">Acceder a recursos</a>
+          <a class="btn" href="https://negredopro.com/acceso-profesionales" target="_blank" rel="noopener">Acceder a recursos profesionales</a>
           <a class="btn ghost" data-go="about" data-to="contacto">Solicitar asesoramiento</a>
         </div>
         <figure><img data-img="chica-rizada" alt="Cabello rizado rojo"></figure>
@@ -192,7 +192,8 @@
       <section class="sec">
         <div class="wrap">
           <div class="sh">
-            <div><div class="eyebrow">Elige tu gama</div><h2 class="t">Cuatro gamas. <b>Una identidad.</b></h2></div>
+            <div><div class="eyebrow">Elige tu gama</div><h2 class="t">Cuatro gamas. <b>Una identidad.</b></h2>
+              <p class="sec-lead">Cuatro formas de llevar el color. Entra en cada gama para ver sus productos y su enfoque.</p></div>
           </div>
           <div class="gamas-grid" id="color-gamas"></div>
         </div>
@@ -204,11 +205,12 @@
           </div>
           <div class="tn">
             <div>
-              <p>Elige una familia y un tono para ir a la ficha del producto. Tonos orientativos: consulta la carta oficial antes de formular.</p>
+              <div class="tone-lines" role="group" aria-label="Gama de coloración"><button class="tone-line on" data-tone-line="color">RED'S COLOR</button><button class="tone-line" data-tone-line="keratin">RED'S KERATIN</button></div>
+              <p>Elige una familia y un tono para abrir su ficha oficial. Confirma la fórmula con la carta física y las indicaciones técnicas.</p>
               <div class="fams" id="fams"></div>
               <div class="tones" id="tones"></div>
             </div>
-            <div class="tp" id="tp"><small id="tl">Familia</small><h3 id="tt2">Tono</h3><a class="btn" id="tone-product" data-go="prod" data-id="1">Ver tinte</a></div>
+            <div class="tp" id="tp"><small id="tl">Familia</small><h3 id="tt2">Tono</h3><a class="btn" id="tone-product" data-go="prod" data-id="1">Ver ficha del tono</a><a class="tone-buy-link" id="tone-buy" href="#" target="_blank" rel="noopener">Comprar en tienda profesional ↗</a></div>
           </div>
         </div>
       </section>
@@ -236,7 +238,15 @@
         </div>
       </section>
       <section class="sec dk">
-        <div class="wrap"><div class="sh"><div><div class="eyebrow">Rutinas capilares</div><h2 class="t">Champús y <b>tratamientos.</b></h2></div></div><div class="grid" id="treatment-products"></div></div>
+        <div class="wrap">
+          <div class="sh"><div><div class="eyebrow">Explora por rutina</div><h2 class="t">Tratamientos para <b>tu cabello.</b></h2></div></div>
+          <div class="treatment-lines">
+            <a class="treatment-line" data-go="xil" data-to="xil-shampoos"><img data-img="redsxil" alt="Champús RED'S XIL"><div><small>RED'S XIL</small><h3>Champús</h3><span>Ver formatos →</span></div></a>
+            <a class="treatment-line" data-go="xil" data-to="xil-ampoules"><img data-img="ampolla-fase1-sm" alt="Ampollas RED'S XIL"><div><small>RED'S XIL</small><h3>Ampollas</h3><span>Ver tratamiento →</span></div></a>
+            <a class="treatment-line" data-go="xil" data-to="xil-phases"><img data-img="pack-anticaida3-xl" alt="Ritual RED'S XIL"><div><small>RED'S XIL</small><h3>Ritual anticaída</h3><span>Ver fases →</span></div></a>
+            <a class="treatment-line treatment-consult" data-go="about" data-to="contacto"><div><small>Asesoramiento</small><h3>Otros tratamientos</h3><span>Consultar disponibilidad →</span></div></a>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -248,30 +258,16 @@
           <figure><img data-img="pack-anticaida3-xl" alt="Ritual anticaída RED'S XIL"></figure>
         </div>
       </section>
-      <section class="sec"><div class="wrap"><div class="sh"><div><div class="eyebrow">El ritual completo</div><h2 class="t">Cuida cada <b>fase.</b></h2></div></div><div class="grid" id="xil-products"></div></div></section>
+      <section class="sec" id="xil-products">
+        <div class="wrap xil-shortcuts"><a href="#xil-shampoos">Champús</a><a href="#xil-ampoules">Ampollas</a><a href="#xil-phases">Tratamientos por fases</a></div>
+      </section>
+      <section class="sec"><div class="wrap" id="xil-shampoos"><div class="sh"><div><div class="eyebrow">RED'S XIL</div><h2 class="t">Champús <b>de tratamiento.</b></h2></div></div><div class="grid" id="xil-shampoo-products"></div></div></section>
+      <section class="sec dk"><div class="wrap" id="xil-ampoules"><div class="sh"><div><div class="eyebrow">RED'S XIL</div><h2 class="t">Ampollas <b>anticaída.</b></h2></div></div><div class="grid" id="xil-ampoule-products"></div></div></section>
+      <section class="sec"><div class="wrap" id="xil-phases"><div class="sh"><div><div class="eyebrow">RED'S XIL</div><h2 class="t">Tratamiento <b>por fases.</b></h2></div></div><div class="grid" id="xil-phase-products"></div></div></section>
     </div>
 
     <!-- DETALLE DE CADA GAMA -->
     <div class="v" id="v-gama"><div id="gama-detail"></div></div>
-
-    <!-- PÁGINA: CATEGORÍA / CATÁLOGO -->
-    <div class="v" id="v-cat">
-      <div class="wrap">
-        <div class="crumb"><a data-go="home" class="lnk">Inicio</a> / <span id="cn">Catálogo</span></div>
-        <div class="ch">
-          <h1 id="ct">Catálogo profesional</h1>
-          <p>Fórmulas profesionales para colorear, tratar y proteger. Envío en 24-48 h.</p>
-        </div>
-        <div class="bar">
-          <div class="chips" id="chips"></div><select id="so" aria-label="Ordenar">
-            <option value="0">Destacados</option>
-            <option value="1">Precio: menor a mayor</option>
-            <option value="2">Precio: mayor a menor</option>
-          </select>
-        </div>
-        <div class="grid" id="cg"></div>
-      </div>
-    </div>
 
     <!-- PÁGINA: SOBRE NOSOTROS (el CONTACTO está al final) -->
     <div class="v" id="v-about">
@@ -279,8 +275,8 @@
         <div class="crumb"><a data-go="home" class="lnk">Inicio</a> / Sobre nosotros</div>
         <div class="ch">
           <div class="eyebrow">Sobre nosotros</div>
-          <h1 style="margin-top:12px">Lorem ipsum <b>dolor sit amet</b></h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h1 style="margin-top:12px">Especialistas en <b>color profesional</b></h1>
+          <p>RED'S COLOR reúne coloración, tratamientos y cuidados capilares para el trabajo profesional de peluquería.</p>
         </div>
       </div>
       <section class="sec" style="padding-top:20px">
@@ -288,38 +284,38 @@
           <div class="abv"><img class="f" data-img="fondo-sobrenosotros" alt=""><img class="p" data-img="caviar-sobrenosotros-sm" alt="Tinte Caviar"></div>
           <div>
             <div class="eyebrow">Nuestra historia</div>
-            <h2 class="t">Consectetur <b>adipiscing</b></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            <h2 class="t">Coloración, cuidado y <b>técnica.</b></h2>
+            <p>La propuesta de RED'S COLOR combina gamas de coloración profesional con productos de cuidado capilar y líneas de tratamiento.</p>
+            <p>Explora RED'S COLOR, ARGAN, KERATIN y NATURE, y consulta por separado la rutina anticaída RED'S XIL.</p>
           </div>
         </div>
       </section>
       <section class="stats" data-r>
-        <div><span class="dsp"><b data-n="25">25</b>+</span><small>Años de experiencia</small></div>
-        <div><span class="dsp"><b data-n="500">500</b>+</span><small>Salones profesionales</small></div>
-        <div><span class="dsp"><b data-n="120">120</b></span><small>Tonos disponibles</small></div>
-        <div><span class="dsp"><b data-n="48">48</b> h</span><small>Entrega estimada</small></div>
+        <div><span class="dsp">4</span><small>Gamas de coloración</small></div>
+        <div><span class="dsp">2</span><small>Áreas de producto</small></div>
+        <div><span class="dsp">1</span><small>Línea XIL independiente</small></div>
+        <div><span class="dsp">14</span><small>Días para solicitar devolución</small></div>
       </section>
       <section class="sec">
         <div class="wrap">
           <div class="sh" data-r>
             <div>
               <div class="eyebrow">Valores</div>
-              <h2 class="t">Lorem <b>ipsum</b></h2>
+              <h2 class="t">Una marca <b>profesional.</b></h2>
             </div>
           </div>
           <div class="vals" data-r>
             <div class="val"><span class="dsp">01</span>
               <h3>Calidad</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+              <p>Gamas de coloración permanente y tonos para el trabajo de salón.</p>
             </div>
             <div class="val"><span class="dsp">02</span>
               <h3>Innovación</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Tratamientos capilares y rutina anticaída RED'S XIL.</p>
             </div>
             <div class="val"><span class="dsp">03</span>
               <h3>Compromiso</h3>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+              <p>Contacta con el equipo para consultar disponibilidad y asesoramiento.</p>
             </div>
           </div>
         </div>
@@ -336,9 +332,9 @@
           <div class="ct-g" data-r>
             <div class="ct-i">
               <div class="ct-b"><small>Visítanos</small><a href="https://www.google.com/maps/search/?api=1&query=Calle+Iribar+6+20018+Donostia-San+Sebasti%C3%A1n" target="_blank" rel="noopener">C/ Iribar nº 6, pabellón C8-C9<br>20018 Donostia-San Sebastián ↗</a></div>
-              <div class="ct-b"><small>Teléfono</small><a href="tel:+34000000000">+34 000 000 000</a></div>
-              <div class="ct-b"><small>Email</small><a href="mailto:info@redscolor.com">info@redscolor.com</a></div>
-              <div class="ct-b"><small>Horario de atención</small><span>Lunes a viernes · 9:00 – 18:00</span></div>
+              <div class="ct-b"><small>Teléfono</small><a href="tel:+34943492554">+34 943 49 25 54</a></div>
+              <div class="ct-b"><small>Email</small><a href="mailto:hola@negredopro.com">hola@negredopro.com</a></div>
+              <div class="ct-b"><small>Horario de atención</small><span>Lunes a viernes · 8:30 – 14:00 y 15:00 – 17:00</span></div>
             </div>
             <form class="ct-f" id="cf" novalidate>
               <div class="fd"><label for="cn2">Nombre <b class="rq">*</b></label><input id="cn2" autocomplete="name"><span class="er">El nombre es obligatorio.</span></div>
@@ -362,7 +358,7 @@
     <!-- PÁGINA: FICHA DE PRODUCTO -->
     <div class="v" id="v-prod">
       <div class="wrap">
-        <div class="crumb"><a data-go="home" class="lnk">Inicio</a> / <a data-go="cat" data-f="Todos" class="lnk">Catálogo</a> / <span id="pn2"></span></div>
+        <div class="crumb"><a data-go="home" class="lnk">Inicio</a> / <a id="pc-area" class="lnk" tabindex="0" role="link"></a> / <span id="pn2"></span></div>
         <div class="pd">
           <div class="gal">
             <div class="th" id="th"></div>
@@ -370,7 +366,7 @@
           </div>
           <div class="info">
             <div class="eyebrow" id="pl"></div>
-            <h1 id="pn"></h1><span class="st">★★★★★</span> <small style="color:var(--mut)">4,9 · 128 opiniones</small>
+            <h1 id="pn"></h1>
             <div class="pr" id="pp"></div>
             <p style="color:var(--mut)" id="pd"></p>
             <div id="tb">
@@ -380,15 +376,16 @@
             <div class="buy">
               <div class="qty"><button id="qm" aria-label="Menos">−</button><span id="qv">1</span><button id="qp" aria-label="Más">+</button></div><button class="btn" id="add">Añadir a la cesta</button>
             </div>
-            <div class="stk">En stock · Salida hoy si pides antes de las 14 h</div>
-            <div class="pay"><span>VISA</span><span>MASTERCARD</span><span>PAYPAL</span><span>BIZUM</span></div>
+            <a class="official-buy" id="official-buy" href="#" target="_blank" rel="noopener">Comprar en la tienda profesional ↗</a>
+            <div class="stk">Disponibilidad y plazos en la tienda profesional</div>
+            <div class="pay"><span>Pago gestionado por Negredo Pro</span></div>
             <details open>
               <summary>Envío y devoluciones</summary>
-              <p>Entrega en 24-48 h. Gratis desde 60 €. Devoluciones en 14 días en producto sin abrir.</p>
+              <p>Preparación habitual de 1-2 días hábiles; el plazo total depende del destino. Envío gratuito desde 89 €. Puedes solicitar devolución en 14 días para productos sin abrir; el reembolso se realiza mediante vale.</p>
             </details>
             <details>
               <summary>Modo de empleo</summary>
-              <p>Mezclar con oxidante en crema según la proporción indicada. Aplicar sobre cabello seco y dejar actuar 35 min.</p>
+              <p>Sigue las instrucciones de la ficha técnica del fabricante correspondiente al producto y tono elegidos.</p>
             </details>
             <details>
               <summary>Características</summary>
@@ -441,7 +438,7 @@
           </ul>
         </div>
       </div>
-      <p style="margin-top:50px;font-size:12px">© 2026 RED'S COLOR · Demo de rediseño. Precios y opiniones ilustrativos.</p>
+      <p style="margin-top:50px;font-size:12px">© 2026 RED'S COLOR · Precios y disponibilidad sujetos a la tienda profesional.</p>
     </div>
   </footer>
 
@@ -455,8 +452,8 @@
     <div class="fp"><i id="fpb"></i></div>
     <div id="cl" style="flex:1;overflow:auto;display:flex;flex-direction:column"></div>
     <div style="padding-top:16px;border-top:1px solid var(--line)">
-      <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span>Subtotal</span><b id="sub"></b></div><button class="btn" style="width:100%">Finalizar compra</button>
-      <p style="text-align:center;font-size:12px;color:var(--mut);margin-top:10px">Pago seguro · Devolución 14 días</p>
+    <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span>Subtotal orientativo</span><b id="sub"></b></div><a class="btn" style="width:100%" href="https://negredopro.com/peluqueria" target="_blank" rel="noopener">Abrir tienda profesional</a>
+    <p style="text-align:center;font-size:12px;color:var(--mut);margin-top:10px">La cesta local no se sincroniza; vuelve a añadir los productos en Negredo Pro para completar el pedido.</p>
     </div>
   </aside>
   <aside class="mm" id="mm" aria-label="Menú">

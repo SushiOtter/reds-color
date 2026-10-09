@@ -33,20 +33,24 @@ $('#cf').addEventListener('submit', e => {
     fi && fi.focus();
     return
   }
+  const subject = encodeURIComponent('Solicitud de asesoramiento RED\'S COLOR');
+  const message = encodeURIComponent([
+    `Nombre: ${$('#cn2').value.trim()}`,
+    `Email: ${$('#ce').value.trim()}`,
+    `Perfil: ${$('#ct2').value}`,
+    '',
+    $('#cm').value.trim()
+  ].join('\n'));
+  const mailto = `mailto:hola@negredopro.com?subject=${subject}&body=${message}`;
   const f = $('#cf');
-  gsap.to(f.children, {
+  f.innerHTML = '<div class="ok"><h3>Solicitud preparada</h3><p>Se abrirá un borrador en tu aplicación de correo. El mensaje no se envía hasta que lo confirmes.</p><a class="btn" id="email-draft">Abrir correo</a></div>';
+  $('#email-draft').href = mailto;
+  gsap.from('.ok', {
     opacity: 0,
-    duration: .25,
-    onComplete: () => {
-      f.innerHTML = '<div class="ok"><span class="dsp">¡Gracias! Mensaje enviado</span><p>Te responderemos lo antes posible en horario de atención.</p></div>';
-      gsap.from('.ok', {
-        opacity: 0,
-        y: 16,
-        duration: .6,
-        ease: 'power2.out'
-      })
-    }
-  })
+    y: 16,
+    duration: .6,
+    ease: 'power2.out'
+  });
 });
 $('#cf').addEventListener('input', e => {
   const f = e.target.closest('.fd');

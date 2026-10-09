@@ -1,8 +1,6 @@
 /* VISTAS (páginas): cambiar entre home, categoría, producto y sobre nosotros; ordenar/filtrar; galería; animaciones al hacer scroll. */
 
-let F = 'Todos',
-  S = 0,
-  cur = 'home';
+let cur = 'home';
 
 function show(v) {
   const el = $('#v-' + v);
@@ -14,7 +12,7 @@ function show(v) {
   el.classList.add('on');
   scrollTo(0, 0);
   cur = v;
-  const activeRoute = v == 'gama' ? 'coloracion' : v == 'xil' ? 'tratamientos' : v == 'cat' ? (F == 'Tratamientos' ? 'tratamientos' : 'coloracion') : v;
+  const activeRoute = v == 'gama' ? 'coloracion' : v == 'xil' ? 'tratamientos' : v;
   $$('nav.d a').forEach(a => a.classList.toggle('on', a.dataset.go == activeRoute));
   gsap.fromTo(el, {
     opacity: 0,
@@ -35,58 +33,50 @@ function show(v) {
   reveal()
 }
 
-function cat() {
-  $('#ct').innerHTML = F == 'Todos' ? 'Catálogo <b>profesional</b>' : '<b>' + F + '</b>';
-  $('#cn').textContent = F == 'Todos' ? 'Catálogo' : F;
-  $('#chips').innerHTML = ['Todos', 'Coloración', 'Tratamientos'].map(c => `<button class="chip ${c==F?'on':''}" data-chip="${c}">${c}</button>`).join('');
-  $('#cg').innerHTML = sk(8);
-  setTimeout(() => {
-    let l = P.filter(p => F == 'Todos' || p.area == F);
-    if (S == 1) l.sort((a, b) => a.p - b.p);
-    if (S == 2) l.sort((a, b) => b.p - a.p);
-    $('#cg').innerHTML = l.length ? l.map(card).join('') : '<p class="empty">No hay productos en esta categoría.</p>';
-    if (!RM) gsap.from('#cg .pc', {
-      opacity: 0,
-      y: 24,
-      stagger: .06,
-      duration: .6,
-      ease: 'power2.out'
-    })
-  }, RM ? 0 : 650)
-}
 function coloracion() {
   $('#color-products').innerHTML = P.filter(p => p.area == 'Coloración').map(card).join('')
 }
 function tratamientos() {
-  $('#treatment-products').innerHTML = P.filter(p => p.area == 'Tratamientos' && p.gama != 'xil').map(card).join('')
+  return
 }
 function xil() {
-  $('#xil-products').innerHTML = P.filter(p => p.gama == 'xil').map(card).join('')
+  $('#xil-shampoo-products').innerHTML = P.filter(p => [7, 8, 13].includes(p.id)).map(card).join('');
+  $('#xil-ampoule-products').innerHTML = P.filter(p => p.id == 5).map(card).join('');
+  $('#xil-phase-products').innerHTML = P.filter(p => [4, 11, 12].includes(p.id)).map(card).join('')
 }
 function gama(id) {
   const item = GAMAS.find(g => g.id == id);
   if (!item) return;
   const image = item.producto ? `<div class="gama-detail-art ${item.tipoImagen}">${im(item.imagen, item.nombre)}${im(item.producto, '')}</div>` : `<div class="gama-detail-art ${item.tipoImagen}">${im(item.imagen, item.nombre)}</div>`;
-  const products = item.productos.length ? `<div class="grid">${item.productos.map(id => card(P.find(p => p.id == id), 'view')).join('')}</div>` : `<div class="gama-unlisted"><p>Los productos de esta gama todavía no están cargados en el catálogo.</p><a class="btn" data-go="about" data-to="contacto">Consultar disponibilidad</a></div>`;
+  const products = item.productos.length ? `<div class="grid">${item.productos.map(id => card(P.find(p => p.id == id), 'view')).join('')}</div>` : `<div class="gama-unlisted"><p>Los productos de esta gama todavía no están disponibles online.</p><a class="btn" data-go="about" data-to="contacto">Consultar disponibilidad</a></div>`;
   $('#gama-detail').innerHTML = `<div class="wrap"><div class="crumb"><a class="lnk" data-go="coloracion">Coloración</a> / ${item.nombre}</div><section class="gama-detail-hero">${image}<div><div class="eyebrow">${item.subtitulo}</div><h1>${item.nombre}</h1><p>${item.descripcion}</p></div></section><section class="sec"><div class="sh"><div><div class="eyebrow">${item.nombre}</div><h2 class="t">Descubre <b>la gama.</b></h2></div></div>${products}</section></div>`
 }
 let cp, cq = 1,
   ct, ci = 0;
 
-function prod(id, selectedTone, selectedColor) {
+function prod(id, selectedTone, selectedColor, selectedUrl) {
   cp = P.find(p => p.id == id);
   cq = 1;
-  ct = selectedTone ? [selectedTone, selectedColor] : SH[5];
+  SH = Object.values(FAM).flat().filter((tone, index, tones) => tones.findIndex(item => item[0] == tone[0]) == index && TONE_URLS[cp.gama]?.[tone[0]]);
+  const defaultTone = SH.find(tone => tone[0] == cp.tono?.split(' · ')[0]) || SH[0];
+  ct = selectedTone ? [selectedTone, selectedColor] : defaultTone || ['', '#777'];
   ci = 0;
   $('#pl').textContent = cp.l;
   $('#pn').textContent = $('#pn2').textContent = cp.n;
+  const areaLink = $('#pc-area');
+  if (areaLink) {
+    areaLink.textContent = cp.area;
+    areaLink.dataset.go = cp.area == 'Tratamientos' ? 'tratamientos' : 'coloracion';
+  }
   $('#pd').textContent = cp.d;
   $('#pp').innerHTML = eur(cp.p) + (cp.o ? `<s>${eur(cp.o)}</s>` : '');
   $('#sp').textContent = eur(cp.p);
   $('#qv').textContent = 1;
-  $('#sw').innerHTML = SH.map((s, i) => `<button style="background:${s[1]}" data-sw="${i}" class="${s[1] == ct[1] ? 'on' : ''}" aria-label="${s[0]}"></button>`).join('');
-  $('#tn2').textContent = ct[0];
+  $('#sw').innerHTML = SH.map((s, i) => `<button style="background:${s[1]}" data-sw="${i}" class="${s[0] == ct[0] ? 'on' : ''}" aria-label="Tono ${s[0]}"></button>`).join('');
+  $('#tn2').textContent = cp.tono && !selectedTone ? cp.tono : ct[0];
   $('#tb').style.display = cp.area == 'Coloración' && cp.gama ? '' : 'none';
+  $('#official-buy').href = selectedUrl || cp.url || '#';
+  $('#official-buy').style.display = cp.url ? '' : 'none';
   $('#th').innerHTML = cp.im.map((k, i) => `<button data-th="${i}" class="${i?'':'on'}">${im(k)}</button>`).join('');
   pcol();
   $('#rel').innerHTML = P.filter(p => p.id != id).slice(0, 4).map(card).join('')

@@ -81,6 +81,7 @@
   .treatment-feature,
   .xil-layout,
   .xil-strip,
+  .treatment-lines,
   .ct-g,
   .ct-f,
   .vals,
@@ -182,6 +183,18 @@
 
   .xil-strip {
     padding: 36px 22px
+  }
+
+  .treatment-line {
+    min-height: 180px
+  }
+
+  .treatment-line img {
+    min-height: 180px
+  }
+
+  .treatment-line div {
+    padding: 16px
   }
 
   #toast {
