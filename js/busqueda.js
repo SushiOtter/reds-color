@@ -17,7 +17,7 @@ function doSearch() {
       const h = norm(p.n + ' ' + p.l);
       return w.every(x => h.includes(x))
     }).slice(0, 5);
-  r.innerHTML = l.length ? l.map(p => `<a class="sri" tabindex="0" data-go="prod" data-id="${p.id}" role="option"><span class="srt">${im(p.im[0])}</span><span><b>${p.n}</b><small>${p.l}</small></span><span class="pr">${eur(p.p)}</span></a>`).join('') : `<div class="srn">Sin resultados para «${v.replace(/</g,'&lt;')}»</div>`;
+  r.innerHTML = l.length ? l.map(p => `<a class="sri" tabindex="0" data-go="prod" data-id="${p.id}" role="option"><span class="srt">${im(p.im[0])}</span><span><b>${p.n}</b><small>${p.l}</small></span></a>`).join('') : `<div class="srn">Sin resultados para «${v.replace(/</g,'&lt;')}»</div>`;
   r.style.display = 'block';
   gsap.fromTo('#sr .sri', {
     opacity: 0,

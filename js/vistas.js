@@ -48,15 +48,13 @@ function gama(id) {
   const item = GAMAS.find(g => g.id == id);
   if (!item) return;
   const image = item.producto ? `<div class="gama-detail-art ${item.tipoImagen}">${im(item.imagen, item.nombre)}${im(item.producto, '')}</div>` : `<div class="gama-detail-art ${item.tipoImagen}">${im(item.imagen, item.nombre)}</div>`;
-  const products = item.productos.length ? `<div class="grid">${item.productos.map(id => card(P.find(p => p.id == id), 'view')).join('')}</div>` : `<div class="gama-unlisted"><p>Los productos de esta gama todavía no están disponibles online.</p><a class="btn" data-go="about" data-to="contacto">Consultar disponibilidad</a></div>`;
+  const products = item.productos.length ? `<div class="grid">${item.productos.map(id => card(P.find(p => p.id == id))).join('')}</div>` : `<div class="gama-unlisted"><p>Estamos preparando la presentación de los productos de esta gama. Mientras tanto, puedes conocernos mejor o solicitar información.</p><a class="btn" data-go="about" data-to="contacto">Solicitar información</a></div>`;
   $('#gama-detail').innerHTML = `<div class="wrap"><div class="crumb"><a class="lnk" data-go="coloracion">Coloración</a> / ${item.nombre}</div><section class="gama-detail-hero">${image}<div><div class="eyebrow">${item.subtitulo}</div><h1>${item.nombre}</h1><p>${item.descripcion}</p></div></section><section class="sec"><div class="sh"><div><div class="eyebrow">${item.nombre}</div><h2 class="t">Descubre <b>la gama.</b></h2></div></div>${products}</section></div>`
 }
-let cp, cq = 1,
-  ct, ci = 0;
+let cp, ct, ci = 0;
 
 function prod(id, selectedTone, selectedColor, selectedUrl) {
   cp = P.find(p => p.id == id);
-  cq = 1;
   SH = Object.values(FAM).flat().filter((tone, index, tones) => tones.findIndex(item => item[0] == tone[0]) == index && TONE_URLS[cp.gama]?.[tone[0]]);
   const defaultTone = SH.find(tone => tone[0] == cp.tono?.split(' · ')[0]) || SH[0];
   ct = selectedTone ? [selectedTone, selectedColor] : defaultTone || ['', '#777'];
@@ -69,9 +67,28 @@ function prod(id, selectedTone, selectedColor, selectedUrl) {
     areaLink.dataset.go = cp.area == 'Tratamientos' ? 'tratamientos' : 'coloracion';
   }
   $('#pd').textContent = cp.d;
-  $('#pp').innerHTML = eur(cp.p) + (cp.o ? `<s>${eur(cp.o)}</s>` : '');
-  $('#sp').textContent = eur(cp.p);
-  $('#qv').textContent = 1;
+  const benList = $('#pben');
+  if (benList) {
+    benList.innerHTML = (cp.ben || []).map(b => `<li>${b}</li>`).join('');
+    const benWrap = $('#pbw');
+    if (benWrap) benWrap.style.display = cp.ben && cp.ben.length ? '' : 'none';
+  }
+  const more = $('#pc-more');
+  if (more) {
+    if (cp.gama && cp.area == 'Coloración') {
+      more.dataset.go = 'gama';
+      more.dataset.gama = cp.gama;
+      more.textContent = 'Descubrir la gama';
+    } else if (cp.gama == 'xil') {
+      more.dataset.go = 'xil';
+      delete more.dataset.gama;
+      more.textContent = "Descubrir RED'S XIL";
+    } else {
+      more.dataset.go = 'coloracion';
+      delete more.dataset.gama;
+      more.textContent = 'Ver coloración';
+    }
+  }
   $('#sw').innerHTML = SH.map((s, i) => `<button style="background:${s[1]}" data-sw="${i}" class="${s[0] == ct[0] ? 'on' : ''}" aria-label="Tono ${s[0]}"></button>`).join('');
   $('#tn2').textContent = cp.tono && !selectedTone ? cp.tono : ct[0];
   $('#tb').style.display = cp.area == 'Coloración' && cp.gama ? '' : 'none';
@@ -79,7 +96,7 @@ function prod(id, selectedTone, selectedColor, selectedUrl) {
   $('#official-buy').style.display = cp.url ? '' : 'none';
   $('#th').innerHTML = cp.im.map((k, i) => `<button data-th="${i}" class="${i?'':'on'}">${im(k)}</button>`).join('');
   pcol();
-  $('#rel').innerHTML = P.filter(p => p.id != id).slice(0, 4).map(card).join('')
+  $('#rel').innerHTML = P.filter(p => p.id != id).sort((a, b) => (b.area == cp.area) - (a.area == cp.area)).slice(0, 4).map(card).join('')
 }
 
 function pcol() {

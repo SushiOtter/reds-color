@@ -1,14 +1,20 @@
 /* COMPONENTES: tarjeta de producto, tarjetas de gama, productos destacados de la home y selector "Encuentra tu tono". */
 
-const card = (p, action = 'add') => `<article class="pc" tabindex="0" role="link" data-go="prod" data-id="${p.id}"><div class="pi">${p.b?`<span class="bd ${p.o?'r':''}">${p.b}</span>`:''}${im(p.im[0],p.n)}<div class="qa">${action == 'view' ? `<a class="btn" data-go="prod" data-id="${p.id}">Ver producto</a>` : `<button class="btn" data-add="${p.id}">Añadir</button>`}</div></div><div class="pm"><small>${p.l}</small><h3>${p.n}</h3>${p.tono ? `<span class="pm-tone">${p.tono}</span>` : ''}<div class="pr">${eur(p.p)}${p.o?`<s>${eur(p.o)}</s>`:''}</div></div></article>`;
-const gamaCard = (g, index) => `<article class="gama-card"><a class="gama-art ${g.tipoImagen}" data-go="gama" data-gama="${g.id}" aria-label="Descubrir la gama ${g.nombre}"><img class="gama-image" src="${IMG[g.imagen]}" alt="${g.tipoImagen == 'modelo' ? `Resultado de color de la gama ${g.nombre}` : `Productos de la gama ${g.nombre}`}" ${g.tipoImagen == 'producto' ? 'loading="lazy"' : ''}>${g.producto ? `<img class="gama-pack" src="${IMG[g.producto]}" alt="">` : ''}<span class="gama-index">0${index + 1}</span></a><div class="gama-copy"><p class="gama-sub">${g.subtitulo}</p><h3>${g.nombre}</h3><p class="gama-description">${g.descripcion}</p><a class="lnk" data-go="gama" data-gama="${g.id}">Descubrir gama <span aria-hidden="true">→</span></a></div></article>`;
+const card = p => `<article class="pc" tabindex="0" role="link" data-go="prod" data-id="${p.id}"><div class="pi">${p.b?`<span class="bd">${p.b}</span>`:''}${im(p.im[0],p.n)}<div class="qa"><a class="btn" data-go="prod" data-id="${p.id}">Descubrir</a></div></div><div class="pm"><small>${p.l}</small><h3>${p.n}</h3>${p.tono ? `<span class="pm-tone">${p.tono}</span>` : ''}${p.ben ? `<p class="pm-ben">${p.ben[0]}</p>` : ''}</div></article>`;
+const gamaCard = (g, index) => {
+  const tipo = g.escena ? 'escena' : g.tipoImagen;
+  const imagen = g.escena ? IMG[g.escena] : IMG[g.imagen];
+  const fallback = g.escena ? g.imagen : (g.fallback || '');
+  const alt = g.tipoImagen == 'modelo' ? `Resultado de color de la gama ${g.nombre}` : `Productos de la gama ${g.nombre}`;
+  return `<article class="gama-card"><a class="gama-art ${tipo}" data-go="gama" data-gama="${g.id}" aria-label="Descubrir la gama ${g.nombre}"><img class="gama-image" src="${imagen}" data-fallback="${fallback}" alt="${alt}" ${!g.escena && g.tipoImagen == 'producto' ? 'loading="lazy"' : ''}>${g.producto ? `<img class="gama-pack" src="${IMG[g.producto]}" alt="">` : ''}<span class="gama-index">0${index + 1}</span></a><div class="gama-copy"><p class="gama-sub">${g.subtitulo}</p><h3>${g.nombre}</h3><p class="gama-description">${g.descripcion}</p><a class="lnk" data-go="gama" data-gama="${g.id}">Descubrir gama <span aria-hidden="true">→</span></a></div></article>`;
+};
 const renderGamas = selector => {
   const container = $(selector);
   if (container) container.innerHTML = GAMAS.map(gamaCard).join('')
 };
 renderGamas('#home-gamas');
 renderGamas('#color-gamas');
-$('#feat').innerHTML = [1, 2, 4, 5].map(i => card(P.find(p => p.id == i), 'view')).join('');
+$('#feat').innerHTML = [1, 2, 4, 5].map(i => card(P.find(p => p.id == i))).join('');
 /* carta de tonos */
 let toneLine = 'color';
 
@@ -43,7 +49,7 @@ function tone(f, i) {
   $('#tone-product').dataset.gama = toneLine;
   $('#tone-product').dataset.id = productId;
   $('#tone-buy').href = url;
-  $('#tone-buy').setAttribute('aria-label', `Comprar tono ${t[0]} en la tienda profesional`);
+  $('#tone-buy').setAttribute('aria-label', `Ver la disponibilidad del tono ${t[0]} en la tienda profesional Negredo Pro`);
   gsap.fromTo('#tt2', {
     opacity: 0,
     y: 10

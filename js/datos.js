@@ -1,112 +1,113 @@
-/* DATOS: productos (P), tonos de la ficha (SH) y familias de la carta de color (FAM). Edita aquí nombres, precios e imágenes. */
+﻿/* DATOS: productos (P), gamas (GAMAS), familias de la carta de color (FAM) y tonos disponibles por gama (TONE_URLS).
+   Es una web de marca: no hay precios ni compra. Edita aquÃ­ nombres, descripciones, beneficios (ben) e imÃ¡genes. */
 
 const P = [{
     id: 1,
     n: "Tinte RED'S COLOR Caviar 100 ml",
-    l: "Coloración",
-    area: "Coloración",
+    l: "ColoraciÃ³n",
+    area: "ColoraciÃ³n",
     gama: "color",
-    tono: "6.0 · Rubio oscuro natural",
-    p: 10.95,
+    tono: "6.0 Â· Rubio oscuro natural",
     url: "https://negredopro.com/tinte-reds-color-caviar-100ml-6",
     im: ["caviar2", "caviar1", "caviar2-sm"],
-    d: "Coloración con colorantes de última generación desarrollados por laboratorios americanos."
+    d: "ColoraciÃ³n con colorantes de Ãºltima generaciÃ³n desarrollados por laboratorios americanos. Color intenso, uniforme y de larga duraciÃ³n.",
+    ben: ["Colorantes de Ãºltima generaciÃ³n desarrollados por laboratorios americanos", "Resultados de coloraciÃ³n profesional intensos y uniformes", "Formato de 100 ml"]
   },
   {
     id: 2,
     n: "Tinte con queratina RED'S KERATIN 60 ml",
-    l: "Coloración",
-    area: "Coloración",
+    l: "ColoraciÃ³n",
+    area: "ColoraciÃ³n",
     gama: "keratin",
     tono: "6.0",
-    p: 12.5,
     url: "https://negredopro.com/tinte-con-queratina-reds-keratin-60-60ml",
     im: ["keratin2", "keratin1", "keratin2-sm"],
-    d: "Coloración permanente con proteínas de keratina y aceite de algodón."
+    d: "ColoraciÃ³n permanente enriquecida con proteÃ­nas de keratina y aceite de algodÃ³n para cuidar la fibra mientras colorea.",
+    ben: ["ProteÃ­nas de keratina para fortalecer todo tipo de cabello", "Aceite de algodÃ³n para cuidar la melena", "ColoraciÃ³n profesional permanente Â· 60 ml"]
   },
   {
     id: 3,
-    n: "Decoloración RED'S COLOR 500 g",
+    n: "DecoloraciÃ³n RED'S COLOR 500 g",
     l: "Oxidantes",
-    area: "Coloración",
-    p: 36.9,
+    area: "ColoraciÃ³n",
     url: "https://negredopro.com/decoloracion-reds-color-500g",
     im: ["bleach4", "bleach3", "bleach1"],
-    d: "Decolorante de nueva tecnología, inodoro y con bajo contenido amoniacal."
+    d: "Decolorante de nueva tecnologÃ­a: inodoro, no volÃ¡til y con bajo contenido amoniacal para un aclarado controlado.",
+    ben: ["TecnologÃ­a nueva: inodora y no volÃ¡til", "MÃ¡s agradable para las vÃ­as respiratorias", "Bajo contenido amoniacal Â· 500 g"]
   },
   {
     id: 4,
-    n: "Pack Anticaída Red's Xil",
+    n: "Pack AnticaÃ­da Red's Xil",
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 34.5,
     url: "https://negredopro.com/pack-anticaida-reds-xil",
     im: ["pack-anticaida2-sm", "pack-anticaida1", "pack-anticaida3-xl"],
-    d: "Tratamiento caída 2ª fase + shampoo caída."
+    d: "Tratamiento caÃ­da 2Âª fase + champÃº: un ritual completo para reforzar el cabello y reducir la caÃ­da.",
+    ben: ["Incluye Tratamiento CaÃ­da 2Âª fase + Shampoo CaÃ­da", "Favorece la oxigenaciÃ³n y la actividad metabÃ³lica", "ActÃºa de forma selectiva sobre las cÃ©lulas con bajo nivel de proteÃ­nas"]
   },
   {
     id: 5,
-    n: "Ampollas anticaída 1ª fase RED'S XIL",
+    n: "Ampollas anticaÃ­da 1Âª fase RED'S XIL",
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 34.5,
     url: "https://negredopro.com/ampollas-anticaida-1-fase-reds-xil",
     im: ["xil-ampollas-fase1", "ampolla-fase1-sm", "ampolla-fase2"],
-    d: "Tratamiento preventivo y de mantenimiento para todos los tipos de caída."
+    d: "Tratamiento preventivo y de mantenimiento para todos los tipos de caÃ­da.",
+    ben: ["Tratamiento preventivo y de mantenimiento", "Indicado para todos los tipos de caÃ­da del cabello", "Primera fase del ritual RED'S XIL"]
   },
   {
     id: 6,
     n: "Oxidante en crema RED'S COLOR 20 vol 1000 ml",
     l: "Oxidantes",
-    area: "Coloración",
-    p: 9.95,
+    area: "ColoraciÃ³n",
     url: "https://negredopro.com/oxidante-en-crema-reds-color-20-vol-1000ml",
     im: ["oxidante1000", "oxidante20", "oxidante20-1-sm"],
-    d: "Base cosmética con emolientes y polímero filmógeno que protegen el cabello y el cuero cabelludo."
+    d: "Base cosmÃ©tica con emolientes y polÃ­mero filmÃ³geno que protegen el cabello y el cuero cabelludo.",
+    ben: ["Base cosmÃ©tica enriquecida con emolientes y suavizantes", "PolÃ­mero filmÃ³geno que protege cabello y cuero cabelludo", "Trato mÃ¡s suave y sedoso Â· 1000 ml"]
   },
   {
     id: 7,
-    n: "Champú nutriente anticaspa RED'S XIL 300 ml",
+    n: "ChampÃº nutriente anticaspa RED'S XIL 300 ml",
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 9.9,
     url: "https://negredopro.com/champu-nutriente-reds-xil-300ml",
     im: ["xil-nutriente-300", "caspa", "caspa1"],
-    d: "Champú de uso frecuente para caspa seca y grasa. Regula el cuero cabelludo, calma el picor y nutre con extracto de caviar."
+    d: "ChampÃº de uso frecuente para caspa seca y grasa. Regula el cuero cabelludo, calma el picor y nutre con extracto de caviar.",
+    ben: ["Para caspa seca y grasa", "Regula el cuero cabelludo y calma el picor", "Nutre con extracto de caviar Â· 300 ml"]
   },
   {
     id: 8,
-    n: "Champú anticaída RED'S XIL 300 ml",
+    n: "ChampÃº anticaÃ­da RED'S XIL 300 ml",
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 9.9,
     url: "https://negredopro.com/champu-anticaida-reds-xil-300ml",
     im: ["xil-shampoo-300"],
-    d: "Champú con extracto de caviar y aceites esenciales para cabello débil."
+    d: "ChampÃº con extracto de caviar y aceites esenciales para el cabello dÃ©bil.",
+    ben: ["Con extracto de caviar y aceites esenciales", "Pensado para cabello dÃ©bil", "Formato de 300 ml"]
   },
   {
     id: 9,
     n: "Oxidante en crema RED'S COLOR 10 vol 150 ml",
     l: "Oxidantes",
-    area: "Coloración",
-    p: 3.99,
+    area: "ColoraciÃ³n",
     url: "https://negredopro.com/oxidante-en-crema-reds-color-10-vol-150ml",
     im: ["oxidante10", "oxidante10-1-sm"],
-    d: "Oxidante en crema de uso profesional."
+    d: "Oxidante en crema de uso profesional.",
+    ben: ["Oxidante en crema de uso profesional", "10 volÃºmenes", "Formato de 150 ml"]
   },
   {
     id: 10,
     n: "Oxidante en crema RED'S COLOR 40 vol 150 ml",
     l: "Oxidantes",
-    area: "Coloración",
-    p: 3.99,
+    area: "ColoraciÃ³n",
     url: "https://negredopro.com/oxidante-en-crema-reds-color-40-vol-150ml",
     im: ["oxidante40", "oxidante40-1-sm"],
-    d: "Oxidante en crema de uso profesional."
+    d: "Oxidante en crema de uso profesional.",
+    ben: ["Oxidante en crema de uso profesional", "40 volÃºmenes", "Formato de 150 ml"]
   },
   {
     id: 11,
@@ -114,10 +115,10 @@ const P = [{
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 34.5,
     url: "https://negredopro.com/tratamiento-estimulador-capilar-1-fase-shock-reds-xil-60ml",
     im: ["xil-shock-fase1", "gotero-fase1-sm", "gotero1"],
-    d: "Tratamiento preventivo y de mantenimiento para todo tipo de caída."
+    d: "Tratamiento estimulador de la primera fase, preventivo y de mantenimiento para todo tipo de caÃ­da.",
+    ben: ["Tratamiento preventivo y de mantenimiento", "Indicado para todo tipo de caÃ­da", "Primera fase del ritual RED'S XIL Â· 60 ml"]
   },
   {
     id: 12,
@@ -125,29 +126,30 @@ const P = [{
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 34.5,
     url: "https://negredopro.com/tratamiento-estimulador-capilar-2-fase-fti-reds-xil-60ml",
     im: ["xil-fti-fase2", "gotero-fase2-sm", "ampolla-fase2-sm"],
-    d: "Tratamiento estimulador capilar para la segunda fase."
+    d: "Tratamiento estimulador capilar para la segunda fase del ritual anticaÃ­da.",
+    ben: ["Tratamiento estimulador capilar", "Segunda fase del ritual RED'S XIL", "Formato de 60 ml"]
   },
   {
     id: 13,
-    n: "Champú anticaída RED'S XIL 1000 ml",
+    n: "ChampÃº anticaÃ­da RED'S XIL 1000 ml",
     l: "Tratamientos",
     area: "Tratamientos",
     gama: "xil",
-    p: 19.9,
     url: "https://negredopro.com/champu-anticaida-reds-xil-1000ml",
     im: ["xil-shampoo-1000"],
-    d: "Champú profesional con extracto de caviar y aceites esenciales para la rutina anticaída."
+    d: "Formato profesional con extracto de caviar y aceites esenciales para la rutina anticaÃ­da.",
+    ben: ["Con extracto de caviar y aceites esenciales", "Uso profesional para la rutina anticaÃ­da", "Formato de 1000 ml"]
   }
 ];
 const GAMAS = [
   {
     id: "color",
     nombre: "RED'S COLOR",
-    subtitulo: "Coloración profesional",
-    descripcion: "La línea principal de coloración de RED'S COLOR, pensada para conseguir un color intenso, uniforme y profesional.",
+    subtitulo: "ColoraciÃ³n profesional",
+    descripcion: "La lÃ­nea principal de RED'S COLOR. ColoraciÃ³n intensa, uniforme y de larga duraciÃ³n con colorantes de Ãºltima generaciÃ³n.",
+    escena: "campana-color",  // activa la imagen de campaÃ±a IA (si no existe, usa "imagen" como respaldo)
     imagen: "chica-rizada",
     producto: "caviar-sobrenosotros-sm",
     tipoImagen: "modelo",
@@ -156,8 +158,9 @@ const GAMAS = [
   {
     id: "argan",
     nombre: "RED'S ARGAN",
-    subtitulo: "Color + nutrición",
-    descripcion: "Coloración enriquecida con aceite de argán para aportar cuidado y suavidad al cabello.",
+    subtitulo: "Color + nutriciÃ³n",
+    descripcion: "ColoraciÃ³n enriquecida con aceite de argÃ¡n para aportar nutriciÃ³n y suavidad al cabello durante y despuÃ©s del color.",
+    escena: "campana-argan",
     imagen: "argan-mockup",
     tipoImagen: "producto",
     productos: []
@@ -166,7 +169,8 @@ const GAMAS = [
     id: "keratin",
     nombre: "RED'S KERATIN",
     subtitulo: "Color + cuidado",
-    descripcion: "Coloración con queratina para ayudar a cuidar la fibra capilar durante el proceso de coloración.",
+    descripcion: "ColoraciÃ³n con proteÃ­nas de queratina y aceite de algodÃ³n para cuidar la fibra capilar mientras se colorea.",
+    escena: "campana-keratin",
     imagen: "chica-lisa",
     producto: "keratin2-sm",
     tipoImagen: "modelo",
@@ -175,8 +179,9 @@ const GAMAS = [
   {
     id: "nature",
     nombre: "RED'S NATURE",
-    subtitulo: "Coloración de inspiración natural",
-    descripcion: "Una alternativa dentro de la gama RED'S COLOR para quienes buscan una coloración con un enfoque más natural.",
+    subtitulo: "ColoraciÃ³n de inspiraciÃ³n natural",
+    descripcion: "Una coloraciÃ³n de inspiraciÃ³n natural, para quienes buscan un enfoque mÃ¡s respetuoso dentro de la familia RED'S COLOR.",
+    escena: "campana-nature",
     imagen: "nature",
     tipoImagen: "producto",
     productos: []
@@ -208,6 +213,7 @@ const FAM = {
     ["6.34", "#b8784c"], ["7.34", "#ca965e"], ["8.34", "#dfb779"]
   ]
 };
+/* Tonos que existen en cada gama (solo se usa para saber quÃ© tonos mostrar; la web no vende). */
 const TONE_URLS = {
   color: {
     "6.0": "https://negredopro.com/tinte-reds-color-caviar-100ml-6",

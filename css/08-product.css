@@ -1,5 +1,5 @@
 /* ============================================================
-   12. FICHA DE PRODUCTO (galería, tonos, compra)
+   12. FICHA DE PRODUCTO (galería, tonos, información de marca)
    ============================================================ */
 .pd {
   display: grid;
@@ -63,16 +63,31 @@
   margin: 10px 0 12px
 }
 
-.info .pr {
-  font-size: 26px;
-  margin: 16px 0
+.pd-lead {
+  color: var(--mut);
+  max-width: 52ch;
+  margin-bottom: 8px
+}
+
+.pd-tone-label {
+  margin-top: 22px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase
+}
+
+.pd-tone-label span {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none
 }
 
 .sw {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 10px 0 22px
+  margin: 12px 0 26px
 }
 
 .sw button {
@@ -92,76 +107,64 @@
   box-shadow: 0 0 0 2px var(--red)
 }
 
-.buy {
+.ben-w {
+  margin: 22px 0 6px
+}
+
+.ben-t {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase
+}
+
+.ben {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0
+}
+
+.ben li {
+  position: relative;
+  padding: 9px 0 9px 22px;
+  border-bottom: 1px solid var(--line);
+  color: var(--mut);
+  font-size: 14px;
+  line-height: 1.5
+}
+
+.ben li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 8px;
+  height: 8px;
+  background: var(--red)
+}
+
+.info-cta {
   display: flex;
   gap: 12px;
-  margin: 8px 0 18px
-}
-
-.qty {
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--line)
-}
-
-.qty button {
-  width: 44px;
-  height: 52px
-}
-
-.qty button:hover {
-  background: var(--bg2)
-}
-
-.qty span {
-  width: 30px;
-  text-align: center
-}
-
-.buy .btn {
-  flex: 1
+  flex-wrap: wrap;
+  margin: 8px 0 24px
 }
 
 .official-buy {
   display: inline-flex;
-  margin: 0 0 18px;
-  color: var(--red);
+  color: var(--mut);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .1em;
   text-transform: uppercase;
   text-decoration: underline;
-  text-underline-offset: 4px
+  text-underline-offset: 4px;
+  margin-bottom: 12px;
+  transition: color .2s
 }
 
-.stk {
-  color: #1f7a45;
-  font-size: 13px;
-  display: flex;
-  gap: 8px;
-  align-items: center
-}
-
-.stk::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #1f7a45
-}
-
-.pay {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 16px 0
-}
-
-.pay span {
-  border: 1px solid var(--line);
-  font-size: 11px;
-  padding: 5px 10px;
-  letter-spacing: .06em
+.official-buy:hover {
+  color: var(--red)
 }
 
 details {
@@ -195,8 +198,3 @@ details p {
   color: var(--mut);
   margin-top: 10px
 }
-
-.stick {
-  display: none
-}
-

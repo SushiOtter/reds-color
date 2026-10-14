@@ -3,6 +3,14 @@
    Las rutas son relativas a index.html. */
 const IMG = {
 
+  // ---- campaña (imágenes generadas con IA; ver prompts en redscolor-imagenes/imagenes/campana/) ----
+  // Mientras no existan los archivos, se muestra el hueco y las tarjetas usan su imagen de respaldo.
+  "campana-gamas": "redscolor-imagenes/imagenes/campana/campana-gamas.jpg",
+  "campana-color": "redscolor-imagenes/imagenes/campana/campana-color.jpg",
+  "campana-argan": "redscolor-imagenes/imagenes/campana/campana-argan.jpg",
+  "campana-keratin": "redscolor-imagenes/imagenes/campana/campana-keratin.jpg",
+  "campana-nature": "redscolor-imagenes/imagenes/campana/campana-nature.jpg",
+
   // ---- gamas ----
   "argan-mockup": "redscolor-imagenes/imagenes/Tubo Reds Argan Mockup.png",
   "nature": "redscolor-imagenes/imagenes/reds-color-nature.jpg",

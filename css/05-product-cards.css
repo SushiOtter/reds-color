@@ -103,6 +103,13 @@
   margin: 6px 0
 }
 
+.pm-ben {
+  margin: 6px 0 0;
+  color: var(--mut);
+  font-size: 12px;
+  line-height: 1.5
+}
+
 .pr {
   font-weight: 700
 }

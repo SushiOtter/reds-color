@@ -118,21 +118,6 @@ nav a.on::after {
   stroke-width: 1.5
 }
 
-#cc {
-  position: absolute;
-  top: 4px;
-  right: 2px;
-  background: var(--red);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 600;
-  min-width: 17px;
-  height: 17px;
-  border-radius: 9px;
-  display: grid;
-  place-items: center
-}
-
 .bur,
 .sbt {
   display: none
@@ -215,7 +200,7 @@ nav a.on::after {
 
 .sri {
   display: grid;
-  grid-template-columns: 54px 1fr auto;
+  grid-template-columns: 54px 1fr;
   gap: 12px;
   align-items: center;
   padding: 8px;
