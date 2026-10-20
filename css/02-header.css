@@ -1,5 +1,5 @@
 /* ============================================================
-   4. CABECERA (barra superior, logo, menú, buscador, carrito)
+   4. CABECERA (barra superior, logo, menú y buscador)
    ============================================================ */
 .ann {
   background: var(--red);
@@ -244,4 +244,3 @@ nav a.on::after {
   color: var(--mut);
   text-align: center
 }
-

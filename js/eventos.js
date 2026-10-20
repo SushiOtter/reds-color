@@ -18,7 +18,6 @@ document.addEventListener('click', e => {
     ct = SH[s.dataset.sw];
     $$('#sw button').forEach(b => b.classList.toggle('on', b == s));
     $('#tn2').textContent = ct[0];
-    $('#official-buy').href = TONE_URLS[cp.gama]?.[ct[0]] || cp.url || '#';
     return
   }
   const t = e.target.closest('[data-th]');
@@ -39,7 +38,7 @@ document.addEventListener('click', e => {
     if (v == 'tratamientos') tratamientos();
     if (v == 'xil') xil();
     if (v == 'gama') gama(g.dataset.gama);
-    if (v == 'prod') prod(g.dataset.id, g.dataset.toneName, g.dataset.toneColor, g.dataset.toneUrl);
+    if (v == 'prod') prod(g.dataset.id, g.dataset.toneName, g.dataset.toneColor);
     show(v);
     if (g.dataset.to) setTimeout(() => {
       const x = $('#' + g.dataset.to);

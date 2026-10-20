@@ -53,9 +53,9 @@ function gama(id) {
 }
 let cp, ct, ci = 0;
 
-function prod(id, selectedTone, selectedColor, selectedUrl) {
+function prod(id, selectedTone, selectedColor) {
   cp = P.find(p => p.id == id);
-  SH = Object.values(FAM).flat().filter((tone, index, tones) => tones.findIndex(item => item[0] == tone[0]) == index && TONE_URLS[cp.gama]?.[tone[0]]);
+  SH = Object.values(FAM).flat().filter((tone, index, tones) => tones.findIndex(item => item[0] == tone[0]) == index && TONES[cp.gama]?.includes(tone[0]));
   const defaultTone = SH.find(tone => tone[0] == cp.tono?.split(' · ')[0]) || SH[0];
   ct = selectedTone ? [selectedTone, selectedColor] : defaultTone || ['', '#777'];
   ci = 0;
@@ -92,8 +92,6 @@ function prod(id, selectedTone, selectedColor, selectedUrl) {
   $('#sw').innerHTML = SH.map((s, i) => `<button style="background:${s[1]}" data-sw="${i}" class="${s[0] == ct[0] ? 'on' : ''}" aria-label="Tono ${s[0]}"></button>`).join('');
   $('#tn2').textContent = cp.tono && !selectedTone ? cp.tono : ct[0];
   $('#tb').style.display = cp.area == 'Coloración' && cp.gama ? '' : 'none';
-  $('#official-buy').href = selectedUrl || cp.url || '#';
-  $('#official-buy').style.display = cp.url ? '' : 'none';
   $('#th').innerHTML = cp.im.map((k, i) => `<button data-th="${i}" class="${i?'':'on'}">${im(k)}</button>`).join('');
   pcol();
   $('#rel').innerHTML = P.filter(p => p.id != id).sort((a, b) => (b.area == cp.area) - (a.area == cp.area)).slice(0, 4).map(card).join('')

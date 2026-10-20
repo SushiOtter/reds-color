@@ -73,5 +73,5 @@ const IMG = {
   "nutriente300": "redscolor-imagenes/imagenes/tratamientos/nutriente300.jpg",
   "nutriente1000": "redscolor-imagenes/imagenes/tratamientos/nutriente1000.jpg",
   "pack-anticaida3-xl": "redscolor-imagenes/imagenes/tratamientos/pack-anticaida3-xl.jpg",
-  "tratamientos": "redscolor-imagenes/imagenes/tratamientos/tratamientos.jpg"
-};
+  "redsxil": "redscolor-imagenes/imagenes/tratamientos/redsxil.jpg",
+  "tratamientos": "redscolor-imagenes/imagenes/tratamientos/tratamientos.jpg"};

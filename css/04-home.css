@@ -484,18 +484,6 @@ section.sec {
   align-self: flex-start
 }
 
-.tone-store-link {
-  align-self: flex-start;
-  margin-top: 16px;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-underline-offset: 4px
-}
-
 /* ============================================================
    8b. HUECOS DE IMAGEN DE CAMPAÑA (sustituir por imágenes IA)
    ============================================================ */
@@ -598,4 +586,3 @@ section.sec {
   color: #b5b5b5;
   font-size: 14px
 }
-

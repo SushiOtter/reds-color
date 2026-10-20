@@ -19,7 +19,7 @@ $('#feat').innerHTML = [1, 2, 4, 5].map(i => card(P.find(p => p.id == i))).join(
 let toneLine = 'color';
 
 function lineTones(f) {
-  return (FAM[f] || []).filter(([code]) => TONE_URLS[toneLine]?.[code]);
+  return (FAM[f] || []).filter(([code]) => TONES[toneLine]?.includes(code));
 }
 
 function renderToneFamilies(selected = 'Naturales') {
@@ -38,18 +38,14 @@ function tone(f, i) {
   const t = lineTones(f)[i];
   if (!t) return;
   const productId = toneLine == 'keratin' ? 2 : 1;
-  const url = TONE_URLS[toneLine][t[0]];
   $$('.tone').forEach((b, k) => b.classList.toggle('on', k == i));
   $('#tp').style.background = t[1];
   $('#tl').textContent = 'Familia ' + f;
   $('#tt2').textContent = 'Tono ' + t[0];
   $('#tone-product').dataset.toneName = t[0];
   $('#tone-product').dataset.toneColor = t[1];
-  $('#tone-product').dataset.toneUrl = url;
   $('#tone-product').dataset.gama = toneLine;
   $('#tone-product').dataset.id = productId;
-  $('#tone-buy').href = url;
-  $('#tone-buy').setAttribute('aria-label', `Ver la disponibilidad del tono ${t[0]} en la tienda profesional Negredo Pro`);
   gsap.fromTo('#tt2', {
     opacity: 0,
     y: 10
