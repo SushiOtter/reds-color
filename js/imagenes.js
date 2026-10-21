@@ -5,11 +5,15 @@ const IMG = {
 
   // ---- campaña (imágenes generadas con IA; ver prompts en redscolor-imagenes/imagenes/campana/) ----
   // Mientras no existan los archivos, se muestra el hueco y las tarjetas usan su imagen de respaldo.
-  "campana-gamas": "redscolor-imagenes/imagenes/campana/campana-gamas.jpg",
-  "campana-color": "redscolor-imagenes/imagenes/campana/campana-color.jpg",
-  "campana-argan": "redscolor-imagenes/imagenes/campana/campana-argan.jpg",
-  "campana-keratin": "redscolor-imagenes/imagenes/campana/campana-keratin.jpg",
-  "campana-nature": "redscolor-imagenes/imagenes/campana/campana-nature.jpg",
+  "campana-gamas": "nuevas-imagenes-ia/02-gama-reds-color-ia.jpg",
+  "campana-color": "nuevas-imagenes-ia/01-banner-coloracion-ia.jpg",
+  "campana-argan": "nuevas-imagenes-ia/03-gama-argan-ia.jpg",
+  "campana-keratin": "nuevas-imagenes-ia/04-gama-keratin-ia.jpg",
+  "campana-nature": "nuevas-imagenes-ia/05-gama-nature-ia.jpg",
+  "resultado-cobrizo": "nuevas-imagenes-ia/06-resultado-cobrizo-ia.jpg",
+  "resultado-rubio": "nuevas-imagenes-ia/07-resultado-rubio-ia.jpg",
+  "resultado-moreno": "nuevas-imagenes-ia/08-resultado-moreno-ia.jpg",
+  "resultado-mechas": "nuevas-imagenes-ia/09-resultado-mechas-ia.jpg",
 
   // ---- gamas ----
   "argan-mockup": "redscolor-imagenes/imagenes/Tubo Reds Argan Mockup.png",

@@ -186,9 +186,95 @@ section.sec {
   color: var(--mut)
 }
 
-.results-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 1060px
+.res.results-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: none
+}
+
+.results-grid figure {
+  aspect-ratio: 4 / 5
+}
+
+.results-grid figcaption {
+  justify-content: flex-start;
+  font-size: 10px;
+  letter-spacing: .12em
+}
+
+.home-benefits {
+  display: grid;
+  gap: clamp(32px, 5vw, 64px)
+}
+
+.home-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 4vw, 52px)
+}
+
+.home-benefits-grid article {
+  padding-top: 20px;
+  border-top: 1px solid #3a3a3a
+}
+
+.home-benefits-grid .dsp {
+  color: var(--red);
+  font-size: 13px;
+  letter-spacing: .12em
+}
+
+.home-benefits-grid h3 {
+  margin: 14px 0 8px;
+  font-size: 19px
+}
+
+.home-benefits-grid p {
+  max-width: 330px;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.7
+}
+
+.home-close {
+  padding: clamp(52px, 8vw, 100px) 0;
+  background: #0a0a0a;
+  color: #fff
+}
+
+.home-close-content {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 40px
+}
+
+.home-close .t {
+  margin: 14px 0
+}
+
+.home-close p {
+  max-width: 560px;
+  color: #b5b5b5
+}
+
+.home-close-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px
+}
+
+.home-close-pro {
+  flex-basis: 100%;
+  color: #b5b5b5;
+  font-size: 12px;
+  text-align: right
+}
+
+.home-close-pro:hover {
+  color: #fff
 }
 
 .care-grid {
@@ -482,44 +568,6 @@ section.sec {
 
 .tp .btn {
   align-self: flex-start
-}
-
-/* ============================================================
-   8b. HUECOS DE IMAGEN DE CAMPAÑA (sustituir por imágenes IA)
-   ============================================================ */
-.campaign-slot {
-  position: relative;
-  aspect-ratio: 16/7;
-  overflow: hidden;
-  margin-bottom: clamp(28px, 5vw, 56px);
-  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 55%, var(--red2) 130%);
-  display: grid;
-  place-items: center
-}
-
-.img-slot-media {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1
-}
-
-.img-slot-note {
-  position: relative;
-  z-index: 0;
-  max-width: 520px;
-  padding: 20px;
-  text-align: center;
-  color: #b5b5b5;
-  font-size: 11px;
-  letter-spacing: .16em;
-  text-transform: uppercase
-}
-
-.img-slot-note b {
-  color: #fff
 }
 
 .gama-art:has(.gama-image.is-missing)::after {

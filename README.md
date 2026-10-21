@@ -55,10 +55,15 @@ La web no tiene flujos de compra ni enlaces directos a la tienda. El enlace a Ne
 
 ## Imágenes de campaña (IA + envase real)
 
-Las imágenes "de campaña" son huecos preparados para tus imágenes generadas con IA. Los prompts y las instrucciones están en `redscolor-imagenes/imagenes/campana/PROMPTS.md`.
+Las imágenes nuevas de campaña y resultados están en `nuevas-imagenes-ia/` y se usan en la portada:
 
-- El banner de campaña de la home usa la clave `campana-gamas` (ver `js/imagenes.js`). Si el archivo no existe, el sistema muestra un respaldo automáticamente (no se rompe nada).
-- Cada gama admite una imagen de campaña opcional: descomenta su línea `escena: "campana-*"` en `js/datos.js` y coloca el archivo en `redscolor-imagenes/imagenes/campana/`. Mientras no exista, se usa como respaldo la imagen actual de la gama.
+- El banner principal usa `01-banner-coloracion-ia.jpg`.
+- Las cuatro tarjetas de gama usan `02-gama-reds-color-ia.jpg` a `05-gama-nature-ia.jpg`.
+- La sección de inspiración muestra los cuatro resultados `06-resultado-cobrizo-ia.jpg` a `09-resultado-mechas-ia.jpg`.
+- Las claves y rutas se mantienen centralizadas en `js/imagenes.js`; las gamas se conectan desde `js/datos.js`.
+
+Los prompts y las instrucciones para nuevas imágenes están en `redscolor-imagenes/imagenes/campana/PROMPTS.md`.
+
 - `herramientas/componer_escena.py` compone una escena IA con el envase real por encima (recórtalo para dejar el hueco donde va el envase). Ajusta el prompt y las rutas dentro del archivo.
 
 ## Qué hace cada cosa

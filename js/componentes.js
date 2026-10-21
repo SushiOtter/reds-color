@@ -5,7 +5,7 @@ const gamaCard = (g, index) => {
   const tipo = g.escena ? 'escena' : g.tipoImagen;
   const imagen = g.escena ? IMG[g.escena] : IMG[g.imagen];
   const fallback = g.escena ? g.imagen : (g.fallback || '');
-  const alt = g.tipoImagen == 'modelo' ? `Resultado de color de la gama ${g.nombre}` : `Productos de la gama ${g.nombre}`;
+  const alt = `Escena de campaña de coloración profesional para la gama ${g.nombre}`;
   return `<article class="gama-card"><a class="gama-art ${tipo}" data-go="gama" data-gama="${g.id}" aria-label="Descubrir la gama ${g.nombre}"><img class="gama-image" src="${imagen}" data-fallback="${fallback}" alt="${alt}" ${!g.escena && g.tipoImagen == 'producto' ? 'loading="lazy"' : ''}>${g.producto ? `<img class="gama-pack" src="${IMG[g.producto]}" alt="">` : ''}<span class="gama-index">0${index + 1}</span></a><div class="gama-copy"><p class="gama-sub">${g.subtitulo}</p><h3>${g.nombre}</h3><p class="gama-description">${g.descripcion}</p><a class="lnk" data-go="gama" data-gama="${g.id}">Descubrir gama <span aria-hidden="true">→</span></a></div></article>`;
 };
 const renderGamas = selector => {
@@ -14,7 +14,8 @@ const renderGamas = selector => {
 };
 renderGamas('#home-gamas');
 renderGamas('#color-gamas');
-$('#feat').innerHTML = [1, 2, 4, 5].map(i => card(P.find(p => p.id == i))).join('');
+const featured = $('#feat');
+if (featured) featured.innerHTML = [1, 2, 4, 5].map(i => card(P.find(p => p.id == i))).join('');
 /* carta de tonos */
 let toneLine = 'color';
 
