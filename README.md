@@ -55,11 +55,14 @@ La web no tiene flujos de compra ni enlaces directos a la tienda. El enlace a Ne
 
 ## Imágenes de campaña (IA + envase real)
 
-Las imágenes nuevas de campaña y resultados están en `nuevas-imagenes-ia/` y se usan en la portada:
+Las imágenes actuales de campaña están en `nuevas-imagenes-ia/` y se usan en las tarjetas de gama:
 
-- El banner principal usa `01-banner-coloracion-ia.jpg`.
-- Las cuatro tarjetas de gama usan `02-gama-reds-color-ia.jpg` a `05-gama-nature-ia.jpg`.
-- La sección de inspiración muestra los cuatro resultados `06-resultado-cobrizo-ia.jpg` a `09-resultado-mechas-ia.jpg`.
+- RED'S COLOR: `01-reds-color.jpg`.
+- RED'S ARGAN: `02-reds-argan.jpg`.
+- RED'S KERATIN: `03-reds-keratin.jpg`.
+- RED'S NATURE: `04-reds-nature.jpg`.
+- El banner usa una imagen de cabello distinta a las tarjetas para evitar repetir la misma composición.
+- La carpeta actual solo incluye dos retratos de cabello para la sección de resultados; hacen falta dos imágenes más para mostrar cuatro resultados distintos.
 - Las claves y rutas se mantienen centralizadas en `js/imagenes.js`; las gamas se conectan desde `js/datos.js`.
 
 Los prompts y las instrucciones para nuevas imágenes están en `redscolor-imagenes/imagenes/campana/PROMPTS.md`.
